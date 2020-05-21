@@ -7,10 +7,10 @@ public class Inventory : MonoBehaviour
 {
     private Card[] ship_cards;
     private Card[] temp_ship_card;
-    private bool ship_set = false;
 
     public void SetShipCards(Card temp_card)
     {
+        bool ship_set = false;
         for (int i = 0; i < ship_cards.Length; i++)
         {
             if (ship_cards[i] == null)

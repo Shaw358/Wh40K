@@ -2,6 +2,8 @@
 {
     public enum SKILLS
     {
-
+        DAMAGE,
+        MOVEMENT,
+        SUPPORT
     }
 }
