@@ -24,6 +24,7 @@ namespace ShipEnums
     {
         JUST_COMMISIONED,
         INEXPERIENCED,
-        REGULAR
+        REGULAR,
+
     }
 }

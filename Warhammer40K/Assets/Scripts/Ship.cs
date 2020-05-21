@@ -11,7 +11,7 @@ public class Ship : MonoBehaviour
     private int power;
     private int influence;
     protected string ship_name;
-    protected string captain_name;
+    Captain captain;
     protected FACTION faction;
     protected SHIP_CLASS ship_class;
     protected SHIP_LEVEL ship_level;
@@ -20,7 +20,6 @@ public class Ship : MonoBehaviour
     {
         ID = temp_ID;
         ship_name = temp_ship_name;
-        captain_name = temp_captain_name;
         faction = temp_faction;
         ship_class = temp_ship_class;
     }
