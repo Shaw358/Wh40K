@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class ObjectHealth : MonoBehaviour
 {
-    private float health;
+    private int health;
 
-    public void SetHealth(float temp_health)
+    public void SetHealth(int temp_health)
     {
         health = temp_health;
     }
@@ -16,8 +16,13 @@ public class ObjectHealth : MonoBehaviour
         return health;
     }
 
-    public void DecreaseHealth(float anAmount)
+    public void DecreaseHealth(int anAmount)
     {
         health -= anAmount;
+    }
+
+    public void AddHealth(int anAmount)
+    {
+        health += anAmount;
     }
 }

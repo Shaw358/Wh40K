@@ -11,12 +11,12 @@ public class Ship : MonoBehaviour
     private int power;
     private int influence;
     protected string ship_name;
-    Captain captain;
+    private Captain captain;
     protected FACTION faction;
     protected SHIP_CLASS ship_class;
     protected SHIP_LEVEL ship_level;
 
-    public void ShipSetup(int temp_ID, string temp_ship_name, string temp_captain_name, FACTION temp_faction, SHIP_CLASS temp_ship_class)
+    public void ShipSetup(int temp_ID, string temp_ship_name, FACTION temp_faction, SHIP_CLASS temp_ship_class)
     {
         ID = temp_ID;
         ship_name = temp_ship_name;
