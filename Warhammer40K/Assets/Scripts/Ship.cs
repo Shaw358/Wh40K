@@ -8,6 +8,8 @@ public class Ship : MonoBehaviour
     //basic stats
     protected float card_scale;
     protected int ID;
+    private int power;
+    private int influence;
     protected string ship_name;
     protected string captain_name;
     protected FACTION faction;
@@ -21,6 +23,11 @@ public class Ship : MonoBehaviour
         captain_name = temp_captain_name;
         faction = temp_faction;
         ship_class = temp_ship_class;
+    }
+
+    public int GetShipClassInt()
+    {
+        return (int)ship_class;
     }
 
     public SHIP_CLASS GetShipClass()

@@ -19,25 +19,50 @@ public class Inventory : MonoBehaviour
                 ship_set = true;
             }
         }
-        if(ship_set == false)
+        if (ship_set == false)
         {
             ship_cards[ship_cards.Length + 1] = temp_card;
         }
     }
 
-    private void SortInventory()
+    public void SortInventory(int sort_type)
     {
-        for(int i = 0; i < 6; i++)
-        {
+        int current_ship_class = 0;
+        int current_card_index = 0;
+        Card[] temp_card_array = ship_cards;
 
+        switch (sort_type)
+        {
+            case 1:
+                //sorts ships by ship class from escort to special
+                break;
+            case 2:
+                //sorts ships by ship class from special to escort
+                break;
+            case 3:
+                //sorts ships by ship power
+                break;
+            case 4:
+                //sorts ships by ship influence
+                break;
         }
 
-        int index = 0;
-        foreach(Card card in ship_cards)
+        for (int i = 0; i < 6; i++)
         {
-            ship_cards[index].GetShipClass();
-
-            index++;
+            foreach (Card card in temp_card_array)
+            {
+                if (card.GetShipClassInt() == current_ship_class)
+                {
+                    ship_cards[current_card_index] = card;
+                }
+                current_card_index++;
+            }
+            current_ship_class++;
         }
+    }
+
+    private void SortingStyle()
+    {
+
     }
 }
