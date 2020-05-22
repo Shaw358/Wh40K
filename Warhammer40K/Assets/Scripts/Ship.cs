@@ -30,6 +30,26 @@ public class Ship : MonoBehaviour
         return (int)ship_class;
     }
 
+    public void SetShipPower(int temp_power)
+    {
+        influence = temp_power;
+    }
+
+    public int GetShipPower()
+    {
+        return power;
+    }
+
+    public void SetShipInfluence(int temp_influence)
+    {
+        influence = temp_influence;
+    }
+
+    public int GetShipInfluence()
+    {
+        return influence;
+    }
+
     public SHIP_CLASS GetShipClass()
     {
         return ship_class;
