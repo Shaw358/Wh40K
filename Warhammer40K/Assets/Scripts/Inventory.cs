@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
     private Card[] ship_cards;
-    private Card[] temp_ship_card;
 
     public void SetShipCards(Card temp_card)
     {
@@ -31,9 +31,12 @@ public class Inventory : MonoBehaviour
         int current_card_index = 0;
         Card[] temp_card_array = ship_cards;
 
+        //TODO: Sorting Fix, only sorts from escort to special right now
+
         switch (sort_type)
         {
             case 1:
+                ship_cards = ship_cards.OrderByDescending(c => c.GetShipClass()).ToArray();
                 //sorts ships by ship class from escort to special
                 break;
             case 2:
@@ -47,7 +50,8 @@ public class Inventory : MonoBehaviour
                 break;
         }
 
-        for (int i = 0; i < 6; i++)
+        /*
+        for (int i = 0; i < 7; i++)
         {
             foreach (Card card in temp_card_array)
             {
@@ -59,6 +63,7 @@ public class Inventory : MonoBehaviour
             }
             current_ship_class++;
         }
+        */
     }
 
     private void SortingStyle()

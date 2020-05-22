@@ -22,6 +22,7 @@ public class Ship : MonoBehaviour
         ship_name = temp_ship_name;
         faction = temp_faction;
         ship_class = temp_ship_class;
+        captain = new Captain();
     }
 
     public int GetShipClassInt()

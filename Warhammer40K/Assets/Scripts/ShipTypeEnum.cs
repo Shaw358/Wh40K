@@ -14,12 +14,14 @@
         CRUISER,
         HEAVY_CRUISER,
         BATTLESHIP,
-        FORTRESS
+        FORTRESS,
+        SPECIAL
     }
     public enum SHIP_LEVEL
     {
         JUST_COMMISIONED,
         INEXPERIENCED,
+        MINOR_EXPERIENCE,
         REGULAR,
 
     }

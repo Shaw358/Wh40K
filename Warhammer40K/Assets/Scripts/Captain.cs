@@ -19,11 +19,13 @@ public class Captain
         name = temp_name;
     }
 
+    //returns the name of the ship
     public string GetCaptainName()
     {
         return name;
     }
 
+    //returns x skill's double to be multiplied
     public double GetSkillMultiplier(SKILLS skill)
     {
         return skill_multiplier[skill];
@@ -31,6 +33,6 @@ public class Captain
 
     public void UpgradeSkill(SKILLS skill)
     {
-
+        skill_multiplier[skill] += 0.02;
     }
 }
