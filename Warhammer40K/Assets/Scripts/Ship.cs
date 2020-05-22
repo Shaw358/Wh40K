@@ -10,8 +10,8 @@ public class Ship : MonoBehaviour
     protected int ID;
     private int power;
     private int influence;
-    protected string ship_name;
     private Captain captain;
+    protected string ship_name;
     protected FACTION faction;
     protected SHIP_CLASS ship_class;
     protected SHIP_LEVEL ship_level;
@@ -33,5 +33,10 @@ public class Ship : MonoBehaviour
     public SHIP_CLASS GetShipClass()
     {
         return ship_class;
+    }
+
+    public void SetShipClass(SHIP_CLASS temp_ship_class)
+    {
+        ship_class = temp_ship_class;
     }
 }

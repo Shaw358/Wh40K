@@ -1,12 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
-using System.Linq;
 
 public class Inventory : MonoBehaviour
 {
     private Card[] ship_cards;
+
+    private void Start()
+    {
+        ship_cards = GetComponentsInChildren<Card>();
+        ship_cards[0].SetShipClass(ShipEnums.SHIP_CLASS.SPECIAL);
+        ship_cards[1].SetShipClass(ShipEnums.SHIP_CLASS.ESCORT);
+        ship_cards[2].SetShipClass(ShipEnums.SHIP_CLASS.BATTLESHIP);
+        ship_cards[3].SetShipClass(ShipEnums.SHIP_CLASS.CRUISER);
+
+        for (int i = 0; i < ship_cards.Length; i++)
+        {
+            print(ship_cards[i].GetShipClass().ToString());
+        }
+        SortInventory();
+    }
 
     public void SetShipCards(Card temp_card)
     {
@@ -25,8 +37,21 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void SortInventory(int sort_type)
+    public void SortInventory(/*int sort_type*/)
     {
+        print("");
+        ship_cards = ship_cards.OrderByDescending(c => c.GetShipClass()).ToArray();
+        for (int i = 0; i < ship_cards.Length; i++)
+        {
+            print(ship_cards[i].GetShipClass().ToString());
+        }
+        print("");
+        ship_cards = ship_cards.OrderBy(c => c.GetShipClass() - 6).ToArray();
+        for (int i = 0; i < ship_cards.Length; i++)
+        {
+            print(ship_cards[i].GetShipClass().ToString());
+        }
+        /*
         int current_ship_class = 0;
         int current_card_index = 0;
         Card[] temp_card_array = ship_cards;
@@ -36,7 +61,6 @@ public class Inventory : MonoBehaviour
         switch (sort_type)
         {
             case 1:
-                ship_cards = ship_cards.OrderByDescending(c => c.GetShipClass()).ToArray();
                 //sorts ships by ship class from escort to special
                 break;
             case 2:
@@ -64,6 +88,7 @@ public class Inventory : MonoBehaviour
             current_ship_class++;
         }
         */
+
     }
 
     private void SortingStyle()

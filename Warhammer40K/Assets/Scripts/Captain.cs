@@ -7,6 +7,7 @@ public class Captain
 {
     private string name;
     private int skill_level;
+    private double skill_gain = 0.02;
 
     private Dictionary<SKILLS, double> skill_multiplier = new Dictionary<SKILLS, double>();
     //1st key, 2nd value - double is the multiplier for stat boosts
@@ -33,6 +34,6 @@ public class Captain
 
     public void UpgradeSkill(SKILLS skill)
     {
-        skill_multiplier[skill] += 0.02;
+        skill_multiplier[skill] += skill_gain;
     }
 }
