@@ -32,7 +32,7 @@ public class Ship : MonoBehaviour
 
     public void SetShipPower(int temp_power)
     {
-        influence = temp_power;
+        power = temp_power;
     }
 
     public int GetShipPower()
