@@ -30,6 +30,11 @@ public class Ship : MonoBehaviour
         return (int)ship_class;
     }
 
+    public void SetName(string temp_name)
+    {
+        name = temp_name;
+    }
+
     public void SetShipPower(int temp_power)
     {
         power = temp_power;

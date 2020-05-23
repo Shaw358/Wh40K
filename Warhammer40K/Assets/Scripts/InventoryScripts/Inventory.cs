@@ -13,7 +13,20 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        
+        ship_cards = GetComponentsInChildren<Card>();
+        ship_cards[0].CardSetup("Cruiser");
+        ship_cards[0].SetShipClass(ShipEnums.SHIP_CLASS.CRUISER);
+
+        ship_cards[1].CardSetup("Escort");
+        ship_cards[1].SetShipClass(ShipEnums.SHIP_CLASS.ESCORT);
+
+        ship_cards[2].CardSetup("Battleship");
+        ship_cards[2].SetShipClass(ShipEnums.SHIP_CLASS.BATTLESHIP);
+
+        ship_cards[3].CardSetup("Special");
+        ship_cards[3].SetShipClass(ShipEnums.SHIP_CLASS.SPECIAL);
+
+        SetSortingType(SORTING_TYPE.ESCORT_TO_SPECIAL);
     }
 
     public void SetSortingType(SORTING_TYPE temp_sorting_type)
