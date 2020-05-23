@@ -7,7 +7,6 @@ public class Ship : MonoBehaviour
 {
     //basic stats
     protected float card_scale;
-    protected int ID;
     private int power;
     private int influence;
     private Captain captain;
@@ -16,10 +15,9 @@ public class Ship : MonoBehaviour
     protected SHIP_CLASS ship_class;
     protected SHIP_LEVEL ship_level;
 
-    public void ShipSetup(int temp_ID, string temp_ship_name, FACTION temp_faction, SHIP_CLASS temp_ship_class)
+    public void ShipSetup(string temp_ship_name, FACTION temp_faction, SHIP_CLASS temp_ship_class)
     {
-        ID = temp_ID;
-        ship_name = temp_ship_name;
+        ship_name = "The " + temp_ship_name;
         faction = temp_faction;
         ship_class = temp_ship_class;
         captain = new Captain();

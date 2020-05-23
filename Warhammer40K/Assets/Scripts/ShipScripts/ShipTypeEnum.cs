@@ -9,10 +9,11 @@
     }
     public enum SHIP_CLASS
     {
-        ESCORT,
+        FRIGATE,
+        DESTROYER,
         LIGHT_CRUISER,
         CRUISER,
-        HEAVY_CRUISER,
+        BATTLE_CRUISER,
         BATTLESHIP,
         FORTRESS,
         SPECIAL
@@ -21,8 +22,9 @@
     {
         JUST_COMMISIONED,
         INEXPERIENCED,
-        MINOR_EXPERIENCE,
         REGULAR,
-
+        SEASONED,
+        SECTOR_VETERANS,
+        SEGMENTUM_VETERANS
     }
 }

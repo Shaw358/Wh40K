@@ -2,8 +2,8 @@
 {
     public enum SORTING_TYPE
     {
-        ESCORT_TO_SPECIAL,
-        SPECIAL_TO_ESCORT,
+        FRIGATE_TO_SPECIAL,
+        SPECIAL_TO_FRIGATE,
         INFLUENCE,
         POWER
     }

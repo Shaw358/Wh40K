@@ -13,20 +13,11 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-        ship_cards = GetComponentsInChildren<Card>();
-        ship_cards[0].CardSetup("Cruiser");
-        ship_cards[0].SetShipClass(ShipEnums.SHIP_CLASS.CRUISER);
+        #region Debugging Stuff
 
-        ship_cards[1].CardSetup("Escort");
-        ship_cards[1].SetShipClass(ShipEnums.SHIP_CLASS.ESCORT);
-
-        ship_cards[2].CardSetup("Battleship");
-        ship_cards[2].SetShipClass(ShipEnums.SHIP_CLASS.BATTLESHIP);
-
-        ship_cards[3].CardSetup("Special");
-        ship_cards[3].SetShipClass(ShipEnums.SHIP_CLASS.SPECIAL);
-
-        SetSortingType(SORTING_TYPE.ESCORT_TO_SPECIAL);
+        ship_cards[0].ShipSetup("", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.);
+        ship_cards[0].CardSetup();
+        #endregion
     }
 
     public void SetSortingType(SORTING_TYPE temp_sorting_type)
@@ -35,18 +26,19 @@ public class Inventory : MonoBehaviour
         SortInventory();
     }
 
-    public void SetShipCards(Card temp_card)
+    public void AddCard(Card temp_card)
     {
-        bool ship_set = false;
+        //TODO: Setup card/ship in function
+        bool card_set = false;
         for (int i = 0; i < ship_cards.Length; i++)
         {
             if (ship_cards[i] == null)
             {
                 ship_cards[i] = temp_card;
-                ship_set = true;
+                card_set = true;
             }
         }
-        if (ship_set == false)
+        if (card_set == false)
         {
             ship_cards[ship_cards.Length + 1] = temp_card;
         }
@@ -57,10 +49,10 @@ public class Inventory : MonoBehaviour
     {
         switch (sorting_type)
         {
-            case SORTING_TYPE.ESCORT_TO_SPECIAL:
+            case SORTING_TYPE.FRIGATE_TO_SPECIAL:
                 ship_cards = ship_cards.OrderBy(c => c.GetShipClass() - 6).ToArray();
                 break;
-            case SORTING_TYPE.SPECIAL_TO_ESCORT:
+            case SORTING_TYPE.SPECIAL_TO_FRIGATE:
                 ship_cards = ship_cards.OrderByDescending(c => c.GetShipClass()).ToArray();
                 break;
             case SORTING_TYPE.POWER:
@@ -72,21 +64,12 @@ public class Inventory : MonoBehaviour
                 ship_cards = ship_cards.OrderByDescending(c => c.GetShipInfluence()).ToArray();
                 break;
         }
-        StartCoroutine(SortCardHierarchyTemp());
+        SortCardHierarchy();
     }
 
     private void SortCardHierarchy()
     {
         for(int i = 0; i < ship_cards.Length; i++)
-        {
-            ship_cards[i].gameObject.transform.SetSiblingIndex(i);
-        }
-    }
-
-    private IEnumerator SortCardHierarchyTemp()
-    {
-        yield return new WaitForSeconds(1.5f);
-        for (int i = 0; i < ship_cards.Length; i++)
         {
             ship_cards[i].gameObject.transform.SetSiblingIndex(i);
         }
