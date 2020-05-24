@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using CaptainEnums;
 
-public class Captain
+public class Captain : ScriptableObject
 {
-    private string name;
+    private string captain_name;
     private int skill_level;
     private double skill_gain = 0.02;
 
@@ -17,13 +17,13 @@ public class Captain
         skill_multiplier[SKILLS.DAMAGE] = 1;
         skill_multiplier[SKILLS.MOVEMENT] = 1;
         skill_multiplier[SKILLS.SUPPORT] = 1;
-        name = temp_name;
+        captain_name = temp_name;
     }
 
     //returns the name of the ship
     public string GetCaptainName()
     {
-        return name;
+        return captain_name;
     }
 
     //returns x skill's double to be multiplied

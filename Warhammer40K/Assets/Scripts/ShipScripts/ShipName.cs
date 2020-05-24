@@ -84,7 +84,6 @@
              "Goliath",
              "Imperial Wrath",
              "Agressor"
-
         };
         string[] light_cruiser_titles =
         {
@@ -124,7 +123,6 @@
              "Firestorm",
              "Cape Wrath",
              "Harrower",
-             "Patrol Group",
              "Erinyes",
              "Lexus",
              "Valiant",

@@ -14,13 +14,16 @@ public class Ship : MonoBehaviour
     protected FACTION faction;
     protected SHIP_CLASS ship_class;
     protected SHIP_LEVEL ship_level;
+    protected ObjectHealth object_health;
 
-    public void ShipSetup(string temp_ship_name, FACTION temp_faction, SHIP_CLASS temp_ship_class)
+    public void ShipSetup(string temp_ship_name, FACTION temp_faction, SHIP_CLASS temp_ship_class, int temp_health)
     {
+        captain = ScriptableObject.CreateInstance<Captain>();
+        object_health = ScriptableObject.CreateInstance<ObjectHealth>();
         ship_name = "The " + temp_ship_name;
         faction = temp_faction;
         ship_class = temp_ship_class;
-        captain = new Captain();
+        object_health.SetHealth(temp_health);
     }
 
     public int GetShipClassInt()
@@ -28,24 +31,9 @@ public class Ship : MonoBehaviour
         return (int)ship_class;
     }
 
-    public void SetName(string temp_name)
-    {
-        name = temp_name;
-    }
-
-    public void SetShipPower(int temp_power)
-    {
-        power = temp_power;
-    }
-
     public int GetShipPower()
     {
         return power;
-    }
-
-    public void SetShipInfluence(int temp_influence)
-    {
-        influence = temp_influence;
     }
 
     public int GetShipInfluence()

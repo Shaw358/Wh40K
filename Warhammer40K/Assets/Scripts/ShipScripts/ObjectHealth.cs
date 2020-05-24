@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectHealth : MonoBehaviour
+public class ObjectHealth : ScriptableObject
 {
+    private int total_health;
     private int health;
 
     public void SetHealth(int temp_health)
     {
-        health = temp_health;
+        total_health = health = temp_health;
     }
 
-    public float GetHealth()
+    public string GetHealth()
     {
-        return health;
+        return total_health.ToString() + " / " + health.ToString();
     }
 
     public void DecreaseHealth(int anAmount)

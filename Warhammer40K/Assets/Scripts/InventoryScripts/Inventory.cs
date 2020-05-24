@@ -9,21 +9,33 @@ public class Inventory : MonoBehaviour
     private Card[] ship_cards;
     private int sibling_index;
 
-    public SORTING_TYPE sorting_type;
+    private SORTING_TYPE sorting_type;
 
     private void Start()
     {
+        ship_cards = GetComponentsInChildren<Card>();
         #region Debugging Stuff
-
-        ship_cards[0].ShipSetup("", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.);
+        ship_cards[0].ShipSetup("Iron Blood", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 100000);
         ship_cards[0].CardSetup();
+
+        ship_cards[1].ShipSetup("Lord Solar", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 60000);
+        ship_cards[1].CardSetup();
+
+        ship_cards[2].ShipSetup("Vigilant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.LIGHT_CRUISER, 40000);
+        ship_cards[2].CardSetup();
+
+        ship_cards[3].ShipSetup("Valiant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.FRIGATE, 15000);
+        ship_cards[3].CardSetup();
         #endregion
     }
 
     public void SetSortingType(SORTING_TYPE temp_sorting_type)
     {
-        sorting_type = temp_sorting_type;
-        SortInventory();
+        if(sorting_type != temp_sorting_type)
+        {
+            sorting_type = temp_sorting_type;
+            SortInventory();
+        }
     }
 
     public void AddCard(Card temp_card)
@@ -50,7 +62,7 @@ public class Inventory : MonoBehaviour
         switch (sorting_type)
         {
             case SORTING_TYPE.FRIGATE_TO_SPECIAL:
-                ship_cards = ship_cards.OrderBy(c => c.GetShipClass() - 6).ToArray();
+                ship_cards = ship_cards.OrderBy(c => c.GetShipClass() - 8).ToArray();
                 break;
             case SORTING_TYPE.SPECIAL_TO_FRIGATE:
                 ship_cards = ship_cards.OrderByDescending(c => c.GetShipClass()).ToArray();
