@@ -15,17 +15,20 @@ public class Inventory : MonoBehaviour
     {
         ship_cards = GetComponentsInChildren<Card>();
         #region Debugging Stuff
-        ship_cards[0].ShipSetup("Iron Blood", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 100000);
-        ship_cards[0].CardSetup();
-
-        ship_cards[1].ShipSetup("Lord Solar", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 60000);
-        ship_cards[1].CardSetup();
-
-        ship_cards[2].ShipSetup("Vigilant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.LIGHT_CRUISER, 40000);
+        ship_cards[2].ShipSetup("Iron Blood", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 100000);
         ship_cards[2].CardSetup();
 
-        ship_cards[3].ShipSetup("Valiant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.FRIGATE, 15000);
+        ship_cards[3].ShipSetup("Lord Solar", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 60000);
         ship_cards[3].CardSetup();
+
+        ship_cards[0].ShipSetup("Vigilant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.LIGHT_CRUISER, 40000);
+        ship_cards[0].CardSetup();
+
+        ship_cards[1].ShipSetup("Valiant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.FRIGATE, 15000);
+        ship_cards[1].CardSetup();
+
+        sorting_type = SORTING_TYPE.SPECIAL_TO_FRIGATE;
+        Invoke("SortInventory", 5);
         #endregion
     }
 
@@ -48,6 +51,7 @@ public class Inventory : MonoBehaviour
             {
                 ship_cards[i] = temp_card;
                 card_set = true;
+                break;
             }
         }
         if (card_set == false)
@@ -57,7 +61,7 @@ public class Inventory : MonoBehaviour
         SortInventory();
     }
 
-    public void SortInventory()
+    private void SortInventory()
     {
         switch (sorting_type)
         {
