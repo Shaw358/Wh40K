@@ -23,15 +23,16 @@ public class Card : Ship
         card_text = GetComponentsInChildren<TextMeshProUGUI>();
     }
 
-    private void Start()
-    {
-        
-    }
-
     public void CardSetup()
     {
         card_text[0].text = ship_name;
         card_text[1].text = ship_class.ToString();
         card_text[2].text = object_health.GetHealth(); 
+    }
+
+    //TODO: Select Multiple ships
+    private void OnMouseDown()
+    {
+        
     }
 }
