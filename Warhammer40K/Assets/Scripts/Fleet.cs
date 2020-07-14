@@ -7,19 +7,18 @@ public class Fleet : MonoBehaviour
 {
     private Card[] cards;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     public Card GetCard(int index)
     {
         return cards[index];
     }
 
-    public void AddCardToFleet(Card temp_card)
+    public Card[] GetCards()
     {
-        cards[InventoryN.SearchEmptyIndex(cards)] = temp_card; 
+        return cards;
+    }
+
+    public void AddCardToFleet(Card card_to_add)
+    {
+        cards[InventoryN.SearchEmptyIndex(cards)] = card_to_add; 
     }
 }

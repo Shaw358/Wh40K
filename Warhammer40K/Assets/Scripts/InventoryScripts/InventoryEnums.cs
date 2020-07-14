@@ -5,6 +5,7 @@
         FRIGATE_TO_SPECIAL,
         SPECIAL_TO_FRIGATE,
         INFLUENCE,
-        POWER
+        POWER,
+        NONE
     }
 }

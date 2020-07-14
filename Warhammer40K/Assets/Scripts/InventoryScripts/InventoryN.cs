@@ -19,7 +19,7 @@ namespace CardManagement
             {
                 return card_array.Length + 1;
             }
-            throw new System.InvalidProgramException("This line of code should not be reached, ERR: 001");
+            throw new System.InvalidProgramException("This line of code should not be reached");
         }
     }
 }

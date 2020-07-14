@@ -18,4 +18,14 @@ public class PlanetInventory : MonoBehaviour
     {
         return fleet;
     }
+
+    public Card[] GetCardsFromFleet(int index)
+    {
+        return fleet[index].GetCards();
+    }
+
+    private void OnMouseDown()
+    {
+        print("click");
+    }
 }
