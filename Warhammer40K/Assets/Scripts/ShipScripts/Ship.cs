@@ -18,12 +18,14 @@ public class Ship : MonoBehaviour
 
     public void ShipSetup(string temp_ship_name, FACTION temp_faction, SHIP_CLASS temp_ship_class, int temp_health)
     {
-        captain = ScriptableObject.CreateInstance<Captain>();
-        object_health = ScriptableObject.CreateInstance<ObjectHealth>();
+        captain = new Captain();
+        object_health = new ObjectHealth();
+        object_health.SetHealth(temp_health);
+
         ship_name = "The " + temp_ship_name;
         faction = temp_faction;
         ship_class = temp_ship_class;
-        object_health.SetHealth(temp_health);
+
     }
 
     public int GetShipClassInt()

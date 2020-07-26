@@ -5,12 +5,14 @@ using UnityEngine;
 public class PlanetInventory : MonoBehaviour
 {
     ///Local ship Inventory of planets
-   
+
+    private PlanetFleetMenu pfm;
     private Fleet[] fleet; //fleets present in system
     private UI_Inventory ui_inv; //ship inventory to the right
 
     private void Awake()
     {
+        pfm = FindObjectOfType<Canvas>().GetComponentInChildren<PlanetFleetMenu>();
         ui_inv = GameObject.Find("all_ship_cards").GetComponent<UI_Inventory>();
     }
 
@@ -26,6 +28,7 @@ public class PlanetInventory : MonoBehaviour
 
     private void OnMouseDown()
     {
-        print("click");
+        //TODO: Find alternative for getcomponent
+        pfm.SetPlanet(this.gameObject.GetComponent<PlanetInventory>());
     }
 }
