@@ -6,7 +6,6 @@ using TMPro;
 
 public class Card : Ship
 {
-    private Shader card_shader;
     private Material card_material;
     private Image background_image;
     private Image ship_image;

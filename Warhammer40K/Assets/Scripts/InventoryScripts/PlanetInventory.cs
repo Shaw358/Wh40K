@@ -1,19 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class PlanetInventory : MonoBehaviour
+public class PlanetInventory : Planet
 {
     ///Local ship Inventory of planets
 
-    private PlanetFleetMenu pfm;
-    private Fleet[] fleet; //fleets present in system
-    private UI_Inventory ui_inv; //ship inventory to the right
-
     private void Awake()
     {
-        pfm = FindObjectOfType<Canvas>().GetComponentInChildren<PlanetFleetMenu>();
-        ui_inv = GameObject.Find("all_ship_cards").GetComponent<UI_Inventory>();
+        max_fleet_count = 10;
+        pfm = GameObject.FindGameObjectWithTag("planet_fleet_menu").GetComponentInChildren<PlanetFleetMenu>();
     }
 
     public Fleet[] GetFleets()
@@ -26,9 +23,13 @@ public class PlanetInventory : MonoBehaviour
         return fleet[index].GetCards();
     }
 
-    private void OnMouseDown()
+    public string GetName()
     {
-        //TODO: Find alternative for getcomponent
-        pfm.SetPlanet(this.gameObject.GetComponent<PlanetInventory>());
+        return planet_name;
+    }
+
+    public int GetMaxFleetCount()
+    {
+        return max_fleet_count;
     }
 }

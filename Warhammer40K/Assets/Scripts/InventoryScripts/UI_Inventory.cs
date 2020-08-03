@@ -35,8 +35,8 @@ public class UI_Inventory : MonoBehaviour
 
         for(int i = 0; i < 147; i++)
         {
-            cards[i + 4].ShipSetup("Testing", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.SPECIAL, 1);
-            cards[i + 4].CardSetup();
+            cards[i].ShipSetup("Testing", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.SPECIAL, 1);
+            cards[i].CardSetup();
         }
 
         SortInventory(curr_sorting_type);

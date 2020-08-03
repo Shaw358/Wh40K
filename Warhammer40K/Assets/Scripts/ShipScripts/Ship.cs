@@ -6,6 +6,7 @@ using ShipEnums;
 public class Ship : MonoBehaviour
 {
     //basic stats
+    protected float supply;
     protected float card_scale;
     private int power;
     private int influence;

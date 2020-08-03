@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - fleet_count_text
+  - pfm_cards_container
+  - planet_fleet_menu
+  - ship_container
   layers:
   - Default
   - TransparentFX
