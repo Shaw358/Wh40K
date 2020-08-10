@@ -8,7 +8,7 @@ using System;
 public class UI_Inventory : MonoBehaviour
 {
     private static int max_cards_on_screen = 150;
-    private Card[] cards;
+    private Card[] ship_cards;
     private int sibling_index;
 
     private SORTING_TYPE curr_sorting_type = SORTING_TYPE.FRIGATE_TO_SPECIAL;
@@ -21,22 +21,22 @@ public class UI_Inventory : MonoBehaviour
     private void Start()
     {
         #region Debugging Stuff
-        cards[2].ShipSetup("Iron Blood", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 100000);
-        cards[2].CardSetup();
+        ship_cards[2].ShipSetup("Iron Blood", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 100000);
+        ship_cards[2].CardSetup();
 
-        cards[3].ShipSetup("Lord Solar", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 60000);
-        cards[3].CardSetup();
+        ship_cards[3].ShipSetup("Lord Solar", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 60000);
+        ship_cards[3].CardSetup();
 
-        cards[0].ShipSetup("Vigilant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.LIGHT_CRUISER, 40000);
-        cards[0].CardSetup();
+        ship_cards[0].ShipSetup("Vigilant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.LIGHT_CRUISER, 40000);
+        ship_cards[0].CardSetup();
 
-        cards[1].ShipSetup("Valiant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.FRIGATE, 15000);
-        cards[1].CardSetup();
+        ship_cards[1].ShipSetup("Valiant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.FRIGATE, 15000);
+        ship_cards[1].CardSetup();
 
-        for(int i = 0; i < 147; i++)
+        for(int i = 0; i < ship_cards.Length; i++)
         {
-            cards[i].ShipSetup("Testing", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.SPECIAL, 1);
-            cards[i].CardSetup();
+            ship_cards[i].ShipSetup("Testing", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.SPECIAL, 1);
+            ship_cards[i].CardSetup();
         }
 
         SortInventory(curr_sorting_type);
@@ -50,16 +50,16 @@ public class UI_Inventory : MonoBehaviour
         //checks if the it should sort a new set of cards or just the current ones
         if (card_array == null)
         {
-            temp_card_array = cards;
+            temp_card_array = ship_cards;
         }
         else
         {
             temp_card_array = card_array;
 
             //to reset the game objects for a showing a new bunch of cards
-            for (int i = 0; i < cards.Length; i++)
+            for (int i = 0; i < ship_cards.Length; i++)
             {
-                cards[i].gameObject.SetActive(false);
+                ship_cards[i].gameObject.SetActive(false);
             }
         }
 
@@ -93,22 +93,22 @@ public class UI_Inventory : MonoBehaviour
         
         for(int i = 0; i < temp_card_array.Length; i++)
         {
-            cards[i].gameObject.SetActive(true);
-            cards[i] = temp_card_array[i];
+            ship_cards[i].gameObject.SetActive(true);
+            ship_cards[i] = temp_card_array[i];
         }
         SortCardHierarchy();
     }
 
     private void SortCardHierarchy()
     {
-        for (int i = 0; i < cards.Length; i++)
+        for (int i = 0; i < ship_cards.Length; i++)
         {
-            cards[i].gameObject.transform.SetSiblingIndex(i);
+            ship_cards[i].gameObject.transform.SetSiblingIndex(i);
         }
     }
 
     private void PullCards()
     {
-        cards = GetComponentsInChildren<Card>();
+        ship_cards = GetComponentsInChildren<Card>();
     }
 }

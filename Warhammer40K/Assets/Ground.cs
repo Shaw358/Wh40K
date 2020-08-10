@@ -16,6 +16,7 @@ public class Ground : MonoBehaviour
     private void Start()
     {
         ui_collision[0] = GameObject.FindGameObjectWithTag("planet_fleet_menu").GetComponent<UiCollision>();
+        ui_collision[1] = GameObject.FindGameObjectWithTag("ship_container").GetComponent<UiCollision>();
     }
 
     private void OnMouseDown()

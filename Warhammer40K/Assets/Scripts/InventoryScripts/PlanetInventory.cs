@@ -9,6 +9,7 @@ public class PlanetInventory : Planet
 
     private void Awake()
     {
+        fleet[0] = new Fleet();
         max_fleet_count = 10;
         pfm = GameObject.FindGameObjectWithTag("planet_fleet_menu").GetComponentInChildren<PlanetFleetMenu>();
     }
@@ -16,11 +17,6 @@ public class PlanetInventory : Planet
     public Fleet[] GetFleets()
     {
         return fleet;
-    }
-
-    public Card[] GetCardsFromFleet(int index)
-    {
-        return fleet[index].GetCards();
     }
 
     public string GetName()

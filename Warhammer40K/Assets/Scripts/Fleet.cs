@@ -1,9 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using CardManagement;
 
-public class Fleet : MonoBehaviour
+public class Fleet : ScriptableObject
 {
     private Card[] cards;
 
