@@ -27,7 +27,10 @@ public class Ground : MonoBehaviour
         }
         else
         {
-            planet_fleet_menu.Clear();
+            if(planet_fleet_menu.GetState() == PlanetFleetMenu.STATE.ACTIVE)
+            {
+                planet_fleet_menu.Clear();
+            }
         }
     }
 }

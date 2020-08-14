@@ -6,8 +6,8 @@ public class InventoryUiMovement : MonoBehaviour
 {
     private RectTransform rectTrans;
 
-    public Vector2 collapsed_state = new Vector2(1040, 392f);
-    public Vector2 open_state = new Vector2(550, 392);
+    public Vector2 collapsed_state = new Vector2(1017, 392f);
+    public Vector2 open_state = new Vector2(672, 392);
     
     private void Awake()
     {
@@ -18,7 +18,7 @@ public class InventoryUiMovement : MonoBehaviour
     //animate it
     public void Move()
     {
-        if (rectTrans.anchoredPosition.x == 1040)
+        if (rectTrans.anchoredPosition.x == 1017)
         {
             rectTrans.anchoredPosition = open_state;
         }

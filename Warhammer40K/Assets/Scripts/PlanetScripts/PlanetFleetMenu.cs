@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,7 +27,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     private List<GameObject> fleet_cards = new List<GameObject>();
 
-    private enum STATE
+    public enum STATE
     {
         ACTIVE,
         NOT_ACTIVE,
@@ -39,6 +38,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     private void Awake()
     {
+        CURR_STATE = STATE.NOT_ACTIVE;
         all_ship_cards = GameObject.FindGameObjectWithTag("pfm_cards_container").GetComponent<ContentSizeFitter>();
 
         for (int i = 0; i < max_cards; i++)
@@ -52,12 +52,13 @@ public class PlanetFleetMenu : MonoBehaviour
 
     private void Start()
     {
-        position_correction = new Vector3(3, 0, 0);
+        position_correction = new Vector3(4, 0, 0);
 
         for (int i = 0; i < fleet_cards.Count; i++)
         {
             fleet_cards[i].gameObject.SetActive(false);
         }
+        gameObject.SetActive(false);
     }
 
     private void Update()
@@ -138,4 +139,14 @@ public class PlanetFleetMenu : MonoBehaviour
             fleets[i] = null;
         }
     }
+
+    public STATE GetState()
+    {
+        return CURR_STATE;
+    }
+
+    public Fleet[] GetFleets()
+    {
+        return fleets;
+    }    
 }
