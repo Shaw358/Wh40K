@@ -11,16 +11,16 @@ public class ButtonSorterHandler : MonoBehaviour
         switch(index)
         {
             case 0:
-                ui_inv.SortInventory(InventoryEnums.SORTING_TYPE.FRIGATE_TO_SPECIAL);
+                ui_inv.UpdateCardInventory(null, InventoryEnums.SORTING_TYPE.FRIGATE_TO_SPECIAL);
                 break;
             case 1:
-                ui_inv.SortInventory(InventoryEnums.SORTING_TYPE.SPECIAL_TO_FRIGATE);
+                ui_inv.UpdateCardInventory(null, InventoryEnums.SORTING_TYPE.SPECIAL_TO_FRIGATE);
                 break;
             case 2:
-                ui_inv.SortInventory(InventoryEnums.SORTING_TYPE.INFLUENCE);
+                ui_inv.UpdateCardInventory(null, InventoryEnums.SORTING_TYPE.INFLUENCE);
                 break;
             case 3:
-                ui_inv.SortInventory(InventoryEnums.SORTING_TYPE.POWER);
+                ui_inv.UpdateCardInventory(null, InventoryEnums.SORTING_TYPE.POWER);
                 break;
         }
     }

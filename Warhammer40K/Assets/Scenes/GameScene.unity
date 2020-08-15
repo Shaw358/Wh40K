@@ -9250,7 +9250,6 @@ GameObject:
   - component: {fileID: 575510669}
   - component: {fileID: 575510670}
   - component: {fileID: 575510671}
-  - component: {fileID: 575510672}
   m_Layer: 5
   m_Name: planet_menu_container
   m_TagString: planet_fleet_menu
@@ -9304,22 +9303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3b0131c5c2cb041bc759826d5c7470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &575510672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575510668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ebc4fab506fd8e47abbeafc2050cea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ui_inventory: {fileID: 0}
-  pfm: {fileID: 0}
-  all_cards: []
-  fleets_selected: 
 --- !u!1001 &586200584
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19933,7 +19916,7 @@ GameObject:
   - component: {fileID: 1261111842}
   - component: {fileID: 1261111841}
   m_Layer: 5
-  m_Name: all_ship_cards
+  m_Name: all_fleet_cards
   m_TagString: pfm_cards_container
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

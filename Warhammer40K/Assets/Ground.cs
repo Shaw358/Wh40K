@@ -31,6 +31,7 @@ public class Ground : MonoBehaviour
             {
                 planet_fleet_menu.Clear();
             }
+            planet_fleet_menu.ClearFleetsSelected();
         }
     }
 }

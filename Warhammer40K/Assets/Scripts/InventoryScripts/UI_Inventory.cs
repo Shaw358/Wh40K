@@ -39,11 +39,11 @@ public class UI_Inventory : MonoBehaviour
             ship_cards[i].CardSetup();
         }
 
-        SortInventory(curr_sorting_type);
+        UpdateCardInventory(null, curr_sorting_type);
         #endregion
     }
 
-    public void SortInventory(SORTING_TYPE sorting_type = SORTING_TYPE.NONE, Card[] card_array = null) //This will sort the cards array on the Sorting Type
+    public void UpdateCardInventory(Card[] card_array = null, SORTING_TYPE sorting_type = SORTING_TYPE.NONE) //This will sort the cards array on the Sorting Type
     {
         Card[] temp_card_array;
 
