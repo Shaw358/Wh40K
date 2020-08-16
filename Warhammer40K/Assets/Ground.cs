@@ -2,28 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Ground : MonoBehaviour
 {
-    [SerializeField] private UiCollision[] ui_collision;
     private PlanetFleetMenu planet_fleet_menu;
 
     private void Awake()
     {
         planet_fleet_menu = FindObjectOfType<Canvas>().GetComponentInChildren<PlanetFleetMenu>();
     }
-
-    private void Start()
-    {
-        ui_collision[0] = GameObject.FindGameObjectWithTag("planet_fleet_menu").GetComponent<UiCollision>();
-        ui_collision[1] = GameObject.FindGameObjectWithTag("ship_container").GetComponent<UiCollision>();
-    }
-
     private void OnMouseDown()
     {
-        if (ui_collision[0].isUIOverride)
+        if (EventSystem.current.IsPointerOverGameObject())
         {
-            Debug.Log("Cancelled OnMouseDown! A UI element has override this object!");
+            return;
         }
         else
         {

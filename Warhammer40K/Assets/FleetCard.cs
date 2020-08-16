@@ -4,9 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class FleetCard : MonoBehaviour
-{ 
+{
     private PlanetFleetMenu pfm;
-    private int supply_consumption;
     private int sibling_index;
 
     private void Awake()
@@ -15,13 +14,13 @@ public class FleetCard : MonoBehaviour
         sibling_index = transform.GetSiblingIndex();
     }
 
-    private void OnMouseDown()
+    public void BeginTransfer()
     {
-        if(Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
             pfm.CardTransferFleetSelector(PlanetFleetMenu.SELECTION_TYPE.SHIFT, sibling_index);
         }
-        else if(Input.GetKey(KeyCode.LeftControl))
+        else if (Input.GetKey(KeyCode.LeftControl))
         {
             pfm.CardTransferFleetSelector(PlanetFleetMenu.SELECTION_TYPE.CONTROL, sibling_index);
         }

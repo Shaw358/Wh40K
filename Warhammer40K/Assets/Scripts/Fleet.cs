@@ -4,6 +4,7 @@ using CardManagement;
 public class Fleet : ScriptableObject
 {
     private Card[] cards;
+    private int supply_consumption;
 
     public Card GetCard(int index)
     {

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlanetFleetMenu : MonoBehaviour
 {
+    int[] yeet;
     FleetSelector fleet_selector;
 
     [SerializeField] private ContentSizeFitter all_ship_cards;
@@ -167,7 +169,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     public void CardTransferFleetSelector(SELECTION_TYPE TEMP_SELECTION_TYPE, int s_index /*sibling index*/)
     {
-        Fleet[] local_fleets = null;
+        List<Fleet> local_fleets = new List<Fleet>();
 
         switch (TEMP_SELECTION_TYPE)
         {
@@ -190,18 +192,31 @@ public class PlanetFleetMenu : MonoBehaviour
                 break;
             case SELECTION_TYPE.SHIFT:
                 //fleets_selected[0] - fleets_selected[s_index]
+                if(fleets_selected.Count > 0 )
+                {
+                    for(int j = 0; j < s_index; j++)
+                    {
+                        fleets_selected[j + 1] = s_index + j;
+                    } 
+                }
+                else
+                {
+                    fleets_selected[0] = s_index;
+                    local_fleets[0] = fleets[s_index];
+                }
 
                 break;
         }
 
         for (int i = 0; i < fleets_selected.Count; i++)
         {
-
+            local_fleets.Add(fleets[fleets_selected[i]]);
         }
 
         //add stuff to localfleet here
 
-        fleet_selector.SetCards(local_fleets);
+        fleet_selector.SetCards(local_fleets.ToArray());
+        print("reached");
     }
 
     public void ClearFleetsSelected()
