@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using ShipEnums;
 
-public class Card : Ship
+public class Card : MonoBehaviour
 {
     private Material card_material;
     private Image background_image;
@@ -12,9 +13,6 @@ public class Card : Ship
     private Image ship_level_icon;
     private Sprite[] ship_level_icon_sprites;
     private TextMeshProUGUI[] card_text;
-    //card_text[0] = name of the ship
-    //card_text[1] = ship class
-    //card_text[2] = ship health
 
     private void Awake()
     {
@@ -22,16 +20,10 @@ public class Card : Ship
         card_text = GetComponentsInChildren<TextMeshProUGUI>();
     }
 
-    public void CardSetup()
+    public void UpdateCardInfo(Ship ship)
     {
-        card_text[0].text = ship_name;
-        card_text[1].text = ship_class.ToString();
-        card_text[2].text = object_health.GetHealth(); 
-    }
-
-    //TODO: Select Multiple ships
-    private void OnMouseDown()
-    {
-        
+        card_text[0].text = ship.GetShipName();
+        card_text[1].text =  ship.GetShipClass().ToString();
+        card_text[2].text = ship.GetObjectHealth().GetHealth(); 
     }
 }

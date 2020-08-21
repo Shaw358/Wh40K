@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ShipEnums;
 
-public class Ship : MonoBehaviour
+public class Ship
 {
     //basic stats
     protected float supply;
@@ -17,16 +17,21 @@ public class Ship : MonoBehaviour
     protected SHIP_LEVEL ship_level;
     protected ObjectHealth object_health;
 
+    //constructor
     public void ShipSetup(string temp_ship_name, FACTION temp_faction, SHIP_CLASS temp_ship_class, int temp_health)
     {
         captain = new Captain();
         object_health = new ObjectHealth();
         object_health.SetHealth(temp_health);
-
         ship_name = "The " + temp_ship_name;
         faction = temp_faction;
         ship_class = temp_ship_class;
 
+    }
+
+    public ObjectHealth GetObjectHealth()
+    {
+        return object_health;
     }
 
     public int GetShipClassInt()
@@ -49,8 +54,8 @@ public class Ship : MonoBehaviour
         return ship_class;
     }
 
-    public void SetShipClass(SHIP_CLASS temp_ship_class)
+    public string GetShipName()
     {
-        ship_class = temp_ship_class;
+        return ship_name;
     }
 }

@@ -10,7 +10,7 @@ public class Planet : MonoBehaviour
     [SerializeField] protected string planet_name;
 
     protected PlanetFleetMenu pfm;
-    [SerializeField] protected Fleet[] fleet; //fleets present in system
+    protected List<Fleet> fleets = new List<Fleet>(); //fleets present in system
 
     private void OnMouseDown()
     {

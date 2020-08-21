@@ -4,23 +4,23 @@ using UnityEngine;
 
 public class FleetSelector
 {
-    UI_Inventory ui_inv;
+    private UI_Inventory ui_inv;
 
-
-    private void Awake()
+    public void Setup()
     {
         ui_inv = GameObject.Find("all_ship_cards").GetComponent<UI_Inventory>();
     }
 
     public void SetCards(Fleet[] fleets)
     {
-        List<Card> temp_card_list = new List<Card>();
+        Debug.Log(ui_inv.gameObject.name);
+        List<Ship> temp_ship_list = new List<Ship>();
 
         foreach(Fleet fleet in fleets)
         {
-            temp_card_list.AddRange(fleet.GetCards());
+            temp_ship_list.AddRange(fleet.GetShips());
         }
-        Card[] ship_cards = temp_card_list.ToArray();
+        Ship[] ship_cards = temp_ship_list.ToArray();
 
         ui_inv.UpdateCardInventory(ship_cards);
     }

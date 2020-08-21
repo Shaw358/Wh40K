@@ -9,7 +9,6 @@ using UnityEngine.UI;
 
 public class PlanetFleetMenu : MonoBehaviour
 {
-    int[] yeet;
     FleetSelector fleet_selector;
 
     [SerializeField] private ContentSizeFitter all_ship_cards;
@@ -49,11 +48,10 @@ public class PlanetFleetMenu : MonoBehaviour
         NONE
     }
 
-    private SELECTION_TYPE CURR_SELECTION_TYPE;
-
     private void Awake()
     {
         fleet_selector = new FleetSelector();
+        fleet_selector.Setup();
 
         CURR_STATE = STATE.NOT_ACTIVE;
         all_ship_cards = GameObject.FindGameObjectWithTag("pfm_cards_container").GetComponent<ContentSizeFitter>();
@@ -174,11 +172,14 @@ public class PlanetFleetMenu : MonoBehaviour
         switch (TEMP_SELECTION_TYPE)
         {
             case SELECTION_TYPE.SINGLE:
-                fleets_selected.Clear();
-                fleets_selected[0] = s_index; 
-                local_fleets[0] = fleets[s_index];
+                ClearFleetsSelected();
+
+                fleets_selected.Add(s_index);
+
+                local_fleets.Add(fleets[s_index]);
 
                 break;
+
             case SELECTION_TYPE.CONTROL:
                 if(fleets_selected[s_index] == null)
                 {
@@ -189,7 +190,13 @@ public class PlanetFleetMenu : MonoBehaviour
                     fleets_selected.RemoveAt(s_index);
                 }
 
+                for (int i = 0; i < fleets_selected.Count; i++)
+                {
+                    local_fleets.Add(fleets[fleets_selected[i]]);
+                }
+
                 break;
+
             case SELECTION_TYPE.SHIFT:
                 //fleets_selected[0] - fleets_selected[s_index]
                 if(fleets_selected.Count > 0 )
@@ -205,18 +212,18 @@ public class PlanetFleetMenu : MonoBehaviour
                     local_fleets[0] = fleets[s_index];
                 }
 
-                break;
-        }
+                for (int i = 0; i < fleets_selected.Count; i++)
+                {
+                    local_fleets.Add(fleets[fleets_selected[i]]);
+                }
 
-        for (int i = 0; i < fleets_selected.Count; i++)
-        {
-            local_fleets.Add(fleets[fleets_selected[i]]);
+                break;
+        
         }
 
         //add stuff to localfleet here
 
         fleet_selector.SetCards(local_fleets.ToArray());
-        print("reached");
     }
 
     public void ClearFleetsSelected()

@@ -9,14 +9,19 @@ public class PlanetInventory : Planet
 
     private void Awake()
     {
-        fleet[0] = new Fleet();
+        fleets.Add(new Fleet());
         max_fleet_count = 10;
         pfm = GameObject.FindGameObjectWithTag("planet_fleet_menu").GetComponentInChildren<PlanetFleetMenu>();
+
+        Ship ship = new Ship();
+        ship.ShipSetup("HMS Indomitable", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 10000);
+
+        fleets[0].AddShipToFleet(ship);
     }
 
     public Fleet[] GetFleets()
     {
-        return fleet;
+        return fleets.ToArray();
     }
 
     public string GetName()

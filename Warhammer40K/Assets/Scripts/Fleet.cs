@@ -1,23 +1,24 @@
 ﻿using UnityEngine;
 using CardManagement;
+using System.Collections.Generic;
 
 public class Fleet : ScriptableObject
 {
-    private Card[] cards;
+    private List<Ship> ships = new List<Ship>();
     private int supply_consumption;
 
-    public Card GetCard(int index)
+    public Ship GetShips(int index)
     {
-        return cards[index];
+        return ships[index];
     }
 
-    public Card[] GetCards()
+    public Ship[] GetShips()
     {
-        return cards;
+        return ships.ToArray();
     }
 
-    public void AddCardToFleet(Card card_to_add)
+    public void AddShipToFleet(Ship ship_to_add)
     {
-        cards[InventoryN.SearchEmptyIndex(cards)] = card_to_add; 
+        ships.Add(ship_to_add); 
     }
 }
