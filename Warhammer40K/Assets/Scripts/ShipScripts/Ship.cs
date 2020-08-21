@@ -16,6 +16,7 @@ public class Ship
     protected SHIP_CLASS ship_class;
     protected SHIP_LEVEL ship_level;
     protected ObjectHealth object_health;
+    protected int supply_consumption;
 
     //constructor
     public void ShipSetup(string temp_ship_name, FACTION temp_faction, SHIP_CLASS temp_ship_class, int temp_health)
@@ -57,5 +58,10 @@ public class Ship
     public string GetShipName()
     {
         return ship_name;
+    }
+
+    public int GetSupplyConsumption()
+    {
+        return supply_consumption;
     }
 }

@@ -21,4 +21,15 @@ public class Fleet : ScriptableObject
     {
         ships.Add(ship_to_add); 
     }
+
+    public int GetFleetSupplyConsumption()
+    {
+        int amount_to_return = 0;
+
+        foreach(Ship ship in ships)
+        {
+            amount_to_return += ship.GetSupplyConsumption();
+        }
+        return amount_to_return;
+    }
 }
