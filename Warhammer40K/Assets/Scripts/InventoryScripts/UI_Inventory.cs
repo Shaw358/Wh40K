@@ -10,88 +10,64 @@ public class UI_Inventory : MonoBehaviour
 {
     private static int max_cards_on_screen = 150;
     private List<Card> ship_cards = new List<Card>();
+    private List<Ship> ships = new List<Ship>();
     private int sibling_index;
 
-    private SORTING_TYPE curr_sorting_type = SORTING_TYPE.FRIGATE_TO_SPECIAL;
+    private SORTING_TYPE curr_sorting_type;
 
     private void Awake()
     {
         PullCards();
+        curr_sorting_type = SORTING_TYPE.SPECIAL_TO_FRIGATE;
     }
 
-    private void Start()
+    public void UpdateCardInventory(List<Ship> ship_list = null, SORTING_TYPE sorting_type = SORTING_TYPE.NONE) //This will sort the cards array on the Sorting Type
     {
-        #region Debugging Stuff
-        /*ship_cards[2].ShipSetup("Iron Blood", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 100000);
-       ship_cards[2].CardSetInfo();
-
-       ship_cards[3].ShipSetup("Lord Solar", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 60000);
-       ship_cards[3].CardSetInfo();
-
-       ship_cards[0].ShipSetup("Vigilant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.LIGHT_CRUISER, 40000);
-       ship_cards[0].CardSetInfo();
-
-       ship_cards[1].ShipSetup("Valiant", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.FRIGATE, 15000);
-       ship_cards[1].CardSetInfo();
-
-       for(int i = 0; i < ship_cards.Length; i++)
-       {
-           ship_cards[i].ShipSetup("Testing", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.SPECIAL, 1);
-           ship_cards[i].CardSetInfo();
-       }
-
-       UpdateCardInventory(null, curr_sorting_type);
-       */
-        #endregion
-    }
-
-    public void UpdateCardInventory(Ship[] ship_array = null, SORTING_TYPE sorting_type = SORTING_TYPE.NONE) //This will sort the cards array on the Sorting Type
-    {
-        Ship[] temp_ship_array;
-
-        //checks if the it should sort a new set of cards or just the current ones
+        if(ship_list != null)
         {
-            temp_ship_array = ship_array;
-
-            //to reset the game objects for a showing a new bunch of cards
-            for (int i = 0; i < ship_cards.Count; i++)
-            {
-                ship_cards[i].gameObject.SetActive(false);
-            }
+            ships = ship_list;
         }
+        //to reset the game objects for a showing a new bunch of cards
+        for (int i = 0; i < ship_cards.Count; i++)
+        {
+            ship_cards[i].gameObject.SetActive(false);
+        }
+
+        //checks if it should sort a new set of cards or just the current ones
 
         if (sorting_type == SORTING_TYPE.NONE)
         {
             sorting_type = curr_sorting_type;
         }
-
-        //to reset the array for new cards
-        //Array.Clear(cards, 0, cards.Length);
+        else
+        {
+            curr_sorting_type = sorting_type;
+        }
 
         switch (sorting_type)
         {
             case SORTING_TYPE.FRIGATE_TO_SPECIAL:
                 //sorts ships by Frigate to Special
-                temp_ship_array = temp_ship_array.OrderBy(c => c.GetShipClass() - Enum.GetNames(typeof(SORTING_TYPE)).Length - 1).ToArray();
+                ships = ships.OrderBy(c => c.GetShipClass() - Enum.GetNames(typeof(SORTING_TYPE)).Length - 1).ToList();
                 break;
             case SORTING_TYPE.SPECIAL_TO_FRIGATE:
                 //sorts ships by Special to Frigate
-                temp_ship_array = temp_ship_array.OrderByDescending(c => c.GetShipClass()).ToArray();
+                ships = ships.OrderByDescending(c => c.GetShipClass()).ToList();
                 break;
             case SORTING_TYPE.POWER:
                 //sorts ships by ship power
-                temp_ship_array = temp_ship_array.OrderByDescending(c => c.GetShipPower()).ToArray();
+                ships = ships.OrderByDescending(c => c.GetShipPower()).ToList();
                 break;
             case SORTING_TYPE.INFLUENCE:
                 //sorts ships by ship influence
-                temp_ship_array = temp_ship_array.OrderByDescending(c => c.GetShipInfluence()).ToArray();
+                ships = ships.OrderByDescending(c => c.GetShipInfluence()).ToList();
                 break;
         }
 
-        for (int i = 0; i < temp_ship_array.Length; i++)
+        for (int i = 0; i < ships.Count; i++)
         {
             ship_cards[i].gameObject.SetActive(true);
-            ship_cards[i].UpdateCardInfo(ship_array[i]);
+            ship_cards[i].UpdateCardInfo(ships[i]);
         }
         SortCardHierarchy();
     }

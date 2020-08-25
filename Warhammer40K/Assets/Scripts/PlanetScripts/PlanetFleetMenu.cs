@@ -1,19 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Data;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
 
 public class PlanetFleetMenu : MonoBehaviour
 {
     FleetSelector fleet_selector;
+    InventoryUiMovement ui_move;
 
     [SerializeField] private ContentSizeFitter all_ship_cards;
 
-    private int max_cards = 1;
+    private int max_cards = 20;
 
     private static Vector3 position_correction;
 
@@ -26,7 +24,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     protected TextMeshProUGUI planet_fleet_count_text;
 
-    private Fleet[] fleets;
+    private List<Fleet> fleets = new List<Fleet>();
 
     private List<GameObject> fleet_cards = new List<GameObject>();
 
@@ -50,6 +48,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     private void Awake()
     {
+        ui_move = GameObject.Find("right_menu_container").GetComponent<InventoryUiMovement>();
         fleet_selector = new FleetSelector();
         fleet_selector.Setup();
 
@@ -91,6 +90,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     public void Activate(PlanetInventory inv)
     {
+        ui_move.Enable(true);
         CURR_STATE = STATE.ACTIVE;
         gameObject.SetActive(true);
         curr_planet = inv;
@@ -98,11 +98,12 @@ public class PlanetFleetMenu : MonoBehaviour
         fleets = curr_planet.GetFleets();
         curr_planet_name.text = curr_planet.GetName();
 
-        int fleet_amount = inv.GetFleets().Length;
+        int fleet_amount = curr_planet.GetFleets().Count;
 
-        SortCardHierarchy(fleet_amount);
+        Ship[] testShips = fleets[0].GetShips();
 
-        for(int i = 0; i < fleet_amount; i++)
+        //SortCardHierarchy(fleet_amount);
+        for (int i = 0; i < fleet_amount; i++)
         {
             fleet_cards[i].SetActive(true);
         }
@@ -122,13 +123,14 @@ public class PlanetFleetMenu : MonoBehaviour
     {
         for (int i = 0; i < fleet_amount; i++)
         {
+            Debug.Log(fleet_cards[i]);
             fleet_cards[i].gameObject.transform.SetSiblingIndex(i);
         }
     }
 
     private void SetText()
     {
-        if (curr_planet.GetFleets().Length < curr_planet.GetMaxFleetCount())
+        if (curr_planet.GetFleets().Count < curr_planet.GetMaxFleetCount())
         {
             //planet_fleet_count_text.color = reset_color;
         }
@@ -137,7 +139,7 @@ public class PlanetFleetMenu : MonoBehaviour
             //planet_fleet_count_text.color = fleet_count_text_color;
         }
 
-        planet_fleet_count_text.text = "Ship Capacity: " + curr_planet.GetFleets().Length + "/" + curr_planet.GetMaxFleetCount();
+        planet_fleet_count_text.text = "Ship Capacity: " + curr_planet.GetFleets().Count + "/" + curr_planet.GetMaxFleetCount();
 
         //TODO:
         //supply text
@@ -149,7 +151,7 @@ public class PlanetFleetMenu : MonoBehaviour
         CURR_STATE = STATE.NONE;
         curr_planet = null;
 
-        for (int i = 0; i < fleets.Length; i++)
+        for (int i = 0; i < fleets.Count; i++)
         {
             fleets[i] = null;
         }
@@ -160,13 +162,14 @@ public class PlanetFleetMenu : MonoBehaviour
         return CURR_STATE;
     }
 
-    public Fleet[] GetFleets()
+    public List<Fleet> GetFleets()
     {
         return fleets;
     }    
 
     public void CardTransferFleetSelector(SELECTION_TYPE TEMP_SELECTION_TYPE, int s_index /*sibling index*/)
     {
+        ui_move.Enable(true);
         List<Fleet> local_fleets = new List<Fleet>();
 
         switch (TEMP_SELECTION_TYPE)
@@ -177,24 +180,23 @@ public class PlanetFleetMenu : MonoBehaviour
                 fleets_selected.Add(s_index);
 
                 local_fleets.Add(fleets[s_index]);
-
                 break;
 
             case SELECTION_TYPE.CONTROL:
-                if(fleets_selected[s_index] == null)
+                print("Here");
+                if (fleets_selected.Contains(s_index))
                 {
-                    fleets_selected[s_index] = s_index;
+                    fleets_selected.Remove(s_index);
                 }
                 else
                 {
-                    fleets_selected.RemoveAt(s_index);
+                    fleets_selected.Add(s_index);
                 }
 
                 for (int i = 0; i < fleets_selected.Count; i++)
                 {
                     local_fleets.Add(fleets[fleets_selected[i]]);
                 }
-
                 break;
 
             case SELECTION_TYPE.SHIFT:
@@ -204,7 +206,7 @@ public class PlanetFleetMenu : MonoBehaviour
                     for(int j = 0; j < s_index; j++)
                     {
                         fleets_selected[j + 1] = s_index + j;
-                    } 
+                    }
                 }
                 else
                 {
@@ -218,11 +220,9 @@ public class PlanetFleetMenu : MonoBehaviour
                 }
 
                 break;
-        
         }
 
         //add stuff to localfleet here
-
         fleet_selector.SetCards(local_fleets.ToArray());
     }
 

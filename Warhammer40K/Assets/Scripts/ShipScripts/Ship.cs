@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using ShipEnums;
 
-public class Ship
+public class Ship : ScriptableObject
 {
     //basic stats
     protected float supply;
@@ -21,13 +21,12 @@ public class Ship
     //constructor
     public void ShipSetup(string temp_ship_name, FACTION temp_faction, SHIP_CLASS temp_ship_class, int temp_health)
     {
-        captain = new Captain();
-        object_health = new ObjectHealth();
+        captain = (Captain) ScriptableObject.CreateInstance(typeof(Captain)); //cast to captain
+        object_health = (ObjectHealth) ScriptableObject.CreateInstance(typeof(ObjectHealth));
         object_health.SetHealth(temp_health);
         ship_name = "The " + temp_ship_name;
         faction = temp_faction;
         ship_class = temp_ship_class;
-
     }
 
     public ObjectHealth GetObjectHealth()

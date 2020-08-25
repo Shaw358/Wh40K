@@ -23,7 +23,7 @@ public class Card : MonoBehaviour
     public void UpdateCardInfo(Ship ship)
     {
         card_text[0].text = ship.GetShipName();
-        card_text[1].text =  ship.GetShipClass().ToString();
+        card_text[1].text = ship.GetShipClass().ToString();
         card_text[2].text = ship.GetObjectHealth().GetHealth(); 
     }
 }

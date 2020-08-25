@@ -9,7 +9,8 @@ public class ObjectHealth : ScriptableObject
 
     public void SetHealth(int temp_health)
     {
-        total_health = health = temp_health;
+        health = temp_health;
+        total_health = temp_health;
     }
 
     public string GetHealth()
