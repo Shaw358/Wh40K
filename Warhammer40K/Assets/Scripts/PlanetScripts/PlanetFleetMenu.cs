@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
@@ -100,8 +101,6 @@ public class PlanetFleetMenu : MonoBehaviour
 
         int fleet_amount = curr_planet.GetFleets().Count;
 
-        Ship[] testShips = fleets[0].GetShips();
-
         //SortCardHierarchy(fleet_amount);
         for (int i = 0; i < fleet_amount; i++)
         {
@@ -151,10 +150,10 @@ public class PlanetFleetMenu : MonoBehaviour
         CURR_STATE = STATE.NONE;
         curr_planet = null;
 
-        for (int i = 0; i < fleets.Count; i++)
+        /*for (int i = 0; i < fleets.Count; i++)
         {
             fleets[i] = null;
-        }
+        }*/
     }
 
     public STATE GetState()
@@ -165,20 +164,19 @@ public class PlanetFleetMenu : MonoBehaviour
     public List<Fleet> GetFleets()
     {
         return fleets;
-    }    
+    }
 
-    public void CardTransferFleetSelector(SELECTION_TYPE TEMP_SELECTION_TYPE, int s_index /*sibling index*/)
+    public void CardTransferFleetSelector(SELECTION_TYPE FLEET_SELECTION_TYPE, int s_index /*sibling index*/)
     {
         ui_move.Enable(true);
         List<Fleet> local_fleets = new List<Fleet>();
 
-        switch (TEMP_SELECTION_TYPE)
+        switch (FLEET_SELECTION_TYPE)
         {
             case SELECTION_TYPE.SINGLE:
-                ClearFleetsSelected();
+                ClearFleetsSelected(SELECTION_TYPE.SINGLE);
 
                 fleets_selected.Add(s_index);
-
                 local_fleets.Add(fleets[s_index]);
                 break;
 
@@ -200,34 +198,53 @@ public class PlanetFleetMenu : MonoBehaviour
                 break;
 
             case SELECTION_TYPE.SHIFT:
-                //fleets_selected[0] - fleets_selected[s_index]
-                if(fleets_selected.Count > 0 )
+                if (fleets_selected.Count > 0)
                 {
-                    for(int j = 0; j < s_index; j++)
+                    ClearFleetsSelected(SELECTION_TYPE.SHIFT);
+                    if (fleets_selected[0] > s_index)
                     {
-                        fleets_selected[j + 1] = s_index + j;
+                        for (int i = fleets_selected[0]; i > s_index; i--)
+                        {
+                            fleets_selected.Add(fleets_selected[0]);
+                        }
+                    }
+                    else
+                    {
+                        for (int i = s_index; i < fleets_selected[0]; i++)
+                        {
+                            fleets_selected.Add(s_index + 1);
+                        }
+                    }
+                    
+                    for (int j = 0; j < fleets_selected.Count; j++)
+                    {
+                        local_fleets.Add(fleets[fleets_selected[j]]);
                     }
                 }
                 else
                 {
-                    fleets_selected[0] = s_index;
-                    local_fleets[0] = fleets[s_index];
+                    fleets_selected.Add(s_index);
+                    local_fleets.Add(fleets[s_index]);
                 }
-
-                for (int i = 0; i < fleets_selected.Count; i++)
-                {
-                    local_fleets.Add(fleets[fleets_selected[i]]);
-                }
-
                 break;
         }
-
-        //add stuff to localfleet here
-        fleet_selector.SetCards(local_fleets.ToArray());
+        fleet_selector.SetCards(local_fleets);
     }
 
-    public void ClearFleetsSelected()
+    public void ClearFleetsSelected(SELECTION_TYPE TYPE)
     {
-        fleets_selected.Clear();
+        switch(TYPE)
+        {
+            case SELECTION_TYPE.SINGLE:
+                fleets_selected.Clear();
+                break;
+            case SELECTION_TYPE.SHIFT:
+                if(fleets_selected.Count > 1)
+                {
+                    int first_remove = 1;
+                    fleets_selected.RemoveRange(first_remove, fleets_selected.Count - 1);
+                }
+                break;
+        }
     }
 }

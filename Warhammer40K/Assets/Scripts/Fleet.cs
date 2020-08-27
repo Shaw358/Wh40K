@@ -12,9 +12,9 @@ public class Fleet : ScriptableObject
         return ships[index];
     }
 
-    public Ship[] GetShips()
+    public List<Ship> GetShips()
     {
-        return ships.ToArray();
+        return ships;
     }
 
     public void AddShipToFleet(Ship ship_to_add)

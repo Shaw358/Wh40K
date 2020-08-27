@@ -18997,6 +18997,7 @@ GameObject:
   - component: {fileID: 938774219}
   - component: {fileID: 938774218}
   - component: {fileID: 938774217}
+  - component: {fileID: 938774221}
   m_Layer: 5
   m_Name: scroll_side
   m_TagString: Untagged
@@ -19103,6 +19104,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 938774215}
   m_CullTransparentMesh: 0
+--- !u!114 &938774221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 938774215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6012203d802eef24f84db2ebbd377728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &944978785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37202,7 +37215,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.023584902, g: 0.44204855, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

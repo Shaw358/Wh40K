@@ -24,7 +24,7 @@ public class Ground : MonoBehaviour
             {
                 planet_fleet_menu.Clear();
             }
-            planet_fleet_menu.ClearFleetsSelected();
+            planet_fleet_menu.ClearFleetsSelected(PlanetFleetMenu.SELECTION_TYPE.SINGLE);
         }
     }
 }

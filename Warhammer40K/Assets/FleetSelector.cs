@@ -11,11 +11,13 @@ public class FleetSelector
         ui_inv = GameObject.Find("all_ship_cards").GetComponent<UI_Inventory>();
     }
 
-    public void SetCards(Fleet[] fleets)
+    public void SetCards(List<Fleet> fleets)
     {
         List<Ship> temp_ship_list = new List<Ship>();
 
-        foreach(Fleet fleet in fleets)
+        Debug.Log(fleets[0].GetShips());
+
+        foreach (Fleet fleet in fleets)
         {
             temp_ship_list.AddRange(fleet.GetShips());
         }
