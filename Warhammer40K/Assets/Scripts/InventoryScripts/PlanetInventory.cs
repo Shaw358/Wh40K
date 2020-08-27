@@ -18,30 +18,30 @@ public class PlanetInventory : Planet
         pfm = GameObject.FindGameObjectWithTag("planet_fleet_menu").GetComponentInChildren<PlanetFleetMenu>();
 
         Ship ship = (Ship)ScriptableObject.CreateInstance(typeof(Ship));
-        ship.ShipSetup("HMS Indomitable", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 10000);
+        ship.ShipSetup("HMS Indomitable", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 1000);
         Ship ship1 = (Ship)ScriptableObject.CreateInstance(typeof(Ship));
-        ship1.ShipSetup("HMS Indomitable", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 10000);
+        ship1.ShipSetup("HMS henk", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLESHIP, 2000);
 
         Ship ship2 = (Ship)ScriptableObject.CreateInstance(typeof(Ship));
-        ship2.ShipSetup("HMS Retard", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 2000);
+        ship2.ShipSetup("HMS Retard", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 3000);
 
         Ship ship3 = (Ship)ScriptableObject.CreateInstance(typeof(Ship));
-        ship3.ShipSetup("HMS Cruiser", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.LIGHT_CRUISER, 10000);
+        ship3.ShipSetup("HMS Cruiser", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.LIGHT_CRUISER, 4000);
         Ship ship4 = (Ship)ScriptableObject.CreateInstance(typeof(Ship));
-        ship4.ShipSetup("HMS Shit", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.FRIGATE, 10000);
+        ship4.ShipSetup("HMS Shit", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.FRIGATE, 5000);
 
         Ship ship5 = (Ship)ScriptableObject.CreateInstance(typeof(Ship));
-        ship5.ShipSetup("HMS Blyaat", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.DESTROYER, 2000);
+        ship5.ShipSetup("HMS Blyaat", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.DESTROYER, 6000);
 
         Ship ship6 = (Ship)ScriptableObject.CreateInstance(typeof(Ship));
-        ship6.ShipSetup("HMS DEUTSCHLAND", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.SPECIAL, 10000);
+        ship6.ShipSetup("HMS DEUTSCHLAND", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.SPECIAL, 7000);
         Ship ship7 = (Ship)ScriptableObject.CreateInstance(typeof(Ship));
-        ship7.ShipSetup("HMS MOveit", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLE_CRUISER, 10000);
+        ship7.ShipSetup("HMS MOveit", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.BATTLE_CRUISER, 8000);
 
         Ship ship8 = (Ship)ScriptableObject.CreateInstance(typeof(Ship));
-        ship8.ShipSetup("HMS Michael Jackson", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 2000);
+        ship8.ShipSetup("HMS Michael Jackson", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 9000);
         Ship ship9 = (Ship)ScriptableObject.CreateInstance(typeof(Ship));
-        ship9.ShipSetup("HMS Special Retard", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 2000);
+        ship9.ShipSetup("HMS Special Retard", ShipEnums.FACTION.IMPERIUM, ShipEnums.SHIP_CLASS.CRUISER, 10000);
 
         fleets[0].AddShipToFleet(ship);
         fleets[1].AddShipToFleet(ship1);

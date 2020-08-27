@@ -200,19 +200,22 @@ public class PlanetFleetMenu : MonoBehaviour
             case SELECTION_TYPE.SHIFT:
                 if (fleets_selected.Count > 0)
                 {
+                    int m = 0;
                     ClearFleetsSelected(SELECTION_TYPE.SHIFT);
                     if (fleets_selected[0] > s_index)
                     {
                         for (int i = fleets_selected[0]; i > s_index; i--)
                         {
-                            fleets_selected.Add(fleets_selected[0]);
+                            m++;
+                            fleets_selected.Add(s_index + m);
                         }
                     }
                     else
                     {
                         for (int i = s_index; i < fleets_selected[0]; i++)
                         {
-                            fleets_selected.Add(s_index + 1);
+                            m++;
+                            fleets_selected.Add(s_index + m);
                         }
                     }
                     
