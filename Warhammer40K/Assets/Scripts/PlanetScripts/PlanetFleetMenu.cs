@@ -156,16 +156,6 @@ public class PlanetFleetMenu : MonoBehaviour
         }*/
     }
 
-    public STATE GetState()
-    {
-        return CURR_STATE;
-    }
-
-    public List<Fleet> GetFleets()
-    {
-        return fleets;
-    }
-
     public void CardTransferFleetSelector(SELECTION_TYPE FLEET_SELECTION_TYPE, int s_index /*sibling index*/)
     {
         ui_move.Enable(true);
@@ -200,27 +190,30 @@ public class PlanetFleetMenu : MonoBehaviour
             case SELECTION_TYPE.SHIFT:
                 if (fleets_selected.Count > 0)
                 {
-                    int m = 0;
+                    int fleet_to_add = 0;
                     ClearFleetsSelected(SELECTION_TYPE.SHIFT);
                     if (fleets_selected[0] > s_index)
                     {
                         for (int i = fleets_selected[0]; i > s_index; i--)
                         {
-                            m++;
-                            fleets_selected.Add(s_index + m);
+                            fleets_selected.Add(s_index + fleet_to_add);
+                            fleet_to_add++;
                         }
                     }
                     else
                     {
-                        for (int i = s_index; i < fleets_selected[0]; i++)
+                        for (int i = s_index; i > fleets_selected[0]; i--)
                         {
-                            m++;
-                            fleets_selected.Add(s_index + m);
+                            print(i);
+                            fleets_selected.Add(s_index + fleet_to_add);
+                            fleet_to_add++;
                         }
                     }
-                    
+
+                    Debug.Log(fleets.Count + " " + fleets_selected.Count);
                     for (int j = 0; j < fleets_selected.Count; j++)
                     {
+                        //print(fleets_selected[j]);
                         local_fleets.Add(fleets[fleets_selected[j]]);
                     }
                 }
@@ -231,7 +224,7 @@ public class PlanetFleetMenu : MonoBehaviour
                 }
                 break;
         }
-        fleet_selector.SetCards(local_fleets);
+        fleet_selector.SetFleets(local_fleets);
     }
 
     public void ClearFleetsSelected(SELECTION_TYPE TYPE)
@@ -249,5 +242,15 @@ public class PlanetFleetMenu : MonoBehaviour
                 }
                 break;
         }
+    }
+
+    public STATE GetState()
+    {
+        return CURR_STATE;
+    }
+
+    public List<Fleet> GetFleets()
+    {
+        return fleets;
     }
 }
