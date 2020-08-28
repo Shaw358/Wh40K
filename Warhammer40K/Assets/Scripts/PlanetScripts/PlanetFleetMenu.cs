@@ -204,13 +204,18 @@ public class PlanetFleetMenu : MonoBehaviour
                     {
                         for (int i = s_index; i > fleets_selected[0]; i--)
                         {
-                            print(i);
-                            fleets_selected.Add(s_index + fleet_to_add);
                             fleet_to_add++;
+                            fleets_selected.Add(fleets_selected[0] + fleet_to_add);
+                            print(fleets_selected[0] + fleet_to_add);
                         }
                     }
 
                     Debug.Log(fleets.Count + " " + fleets_selected.Count);
+
+                    foreach(int i in fleets_selected)
+                    {
+                        print(i);
+                    }
                     for (int j = 0; j < fleets_selected.Count; j++)
                     {
                         //print(fleets_selected[j]);
