@@ -10,8 +10,6 @@ public class PlanetFleetMenu : MonoBehaviour
     FleetSelector fleet_selector;
     InventoryUiMovement ui_move;
 
-    [SerializeField] private ContentSizeFitter all_ship_cards;
-
     private int max_cards = 20;
 
     private static Vector3 position_correction;
@@ -26,10 +24,8 @@ public class PlanetFleetMenu : MonoBehaviour
     protected TextMeshProUGUI planet_fleet_count_text;
 
     private List<Fleet> fleets = new List<Fleet>();
-
-    private List<GameObject> fleet_cards = new List<GameObject>();
-
     private List<int> fleets_selected = new List<int>();
+    private List<GameObject> fleet_cards = new List<GameObject>();
 
     public enum STATE
     {
@@ -49,6 +45,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     private void Awake()
     {
+        ContentSizeFitter all_ship_cards;
         ui_move = GameObject.Find("right_menu_container").GetComponent<InventoryUiMovement>();
         fleet_selector = new FleetSelector();
         fleet_selector.Setup();
@@ -202,14 +199,19 @@ public class PlanetFleetMenu : MonoBehaviour
                     }
                     else
                     {
-                        for (int i = s_index; i > fleets_selected[0]; i--)
+                        for (int i = fleets_selected[0]; i < s_index; i++)
                         {
-                            print(i);
-                            fleets_selected.Add(s_index + fleet_to_add);
+                            print(s_index + fleet_to_add);
                             fleet_to_add++;
+                            fleets_selected.Add(fleets_selected[0] + fleet_to_add);
                         }
                     }
 
+                    /*Debug.Log(fleets_selected.Count);
+                    foreach(int i in fleets_selected)
+                    {
+                        print(i);
+                    }*/
                     Debug.Log(fleets.Count + " " + fleets_selected.Count);
                     for (int j = 0; j < fleets_selected.Count; j++)
                     {
