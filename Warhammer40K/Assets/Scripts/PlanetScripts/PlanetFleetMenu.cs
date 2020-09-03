@@ -135,7 +135,7 @@ public class PlanetFleetMenu : MonoBehaviour
             //planet_fleet_count_text.color = fleet_count_text_color;
         }
 
-        planet_fleet_count_text.text = "Ship Capacity: " + curr_planet.GetFleets().Count + "/" + curr_planet.GetMaxFleetCount();
+        planet_fleet_count_text.text = "Ship Capacity: " + curr_planet.GetFleets().Count + "/ " + curr_planet.GetMaxFleetCount();
 
         //TODO:
         //supply text
@@ -168,7 +168,6 @@ public class PlanetFleetMenu : MonoBehaviour
                 break;
 
             case SELECTION_TYPE.CONTROL:
-                print("Here");
                 if (fleets_selected.Contains(s_index))
                 {
                     fleets_selected.Remove(s_index);
@@ -212,12 +211,6 @@ public class PlanetFleetMenu : MonoBehaviour
                     {
                         print(i);
                     }*/
-                    Debug.Log(fleets.Count + " " + fleets_selected.Count);
-
-                    foreach(int i in fleets_selected)
-                    {
-                        print(i);
-                    }
                     for (int j = 0; j < fleets_selected.Count; j++)
                     {
                         //print(fleets_selected[j]);

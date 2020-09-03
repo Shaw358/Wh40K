@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    [SerializeField] private int movementSpeed;
+    [SerializeField] private int movementSpeed = 20;
     void Update()
     {
         if(Input.GetKey(KeyCode.W))
