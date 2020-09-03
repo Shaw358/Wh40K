@@ -9,6 +9,7 @@ public class PlanetInventory : Planet
 
     private void Awake()
     {
+        //i swear this is just for debugging
         fleets.Add((Fleet) ScriptableObject.CreateInstance(typeof(Fleet)));
         fleets.Add((Fleet) ScriptableObject.CreateInstance(typeof(Fleet)));
         fleets.Add((Fleet)ScriptableObject.CreateInstance(typeof(Fleet)));
