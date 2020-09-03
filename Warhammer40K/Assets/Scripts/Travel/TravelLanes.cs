@@ -46,29 +46,6 @@ public class TravelLanes : MonoBehaviour
                 line_renderer[i].SetPosition(1, planet2);
 
                 accessible_planets[i].gameObject.transform.GetChild(0).GetComponent<TravelLanes>().SetConnectedPlanet(gameObject);
-
-
-
-                /*if(planets_in_range[i].gameObject != gameObject)
-                accessible_planets.Add(planets_in_range[i].gameObject);
-                GameObject empty_gameobject = new GameObject();
-
-                empty_gameobject.transform.parent = gameObject.transform;
-
-                line_renderer.Add(empty_gameobject.AddComponent<LineRenderer>());
-
-                line_renderer[i].startWidth = 0.2f;
-                line_renderer[i].endWidth = 0.2f;
-                line_renderer[i].startColor = line_color;
-                line_renderer[i].endColor = line_color;
-
-                Vector3 planet1 = transform.position;
-                planet1.y -= 1;
-                line_renderer[i].SetPosition(0, planet1);
-
-                Vector3 planet2 = accessible_planets[i].transform.position;
-                planet2.y -= 1;
-                line_renderer[i].SetPosition(1, planet2);*/
             }
         }
     }
