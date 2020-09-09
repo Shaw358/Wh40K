@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &6890404
 PrefabInstance:
@@ -401,7 +401,7 @@ GameObject:
   - component: {fileID: 7486369}
   - component: {fileID: 7486368}
   m_Layer: 8
-  m_Name: Planet (2)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Venus
+  planet_name: 
 --- !u!114 &7486369
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1323,7 +1323,7 @@ GameObject:
   - component: {fileID: 45061078}
   - component: {fileID: 45061077}
   m_Layer: 8
-  m_Name: Planet (3)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1356,7 +1356,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Venus
+  planet_name: 
 --- !u!114 &45061078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1741,7 +1741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Terra
+  planet_name: 
 --- !u!1001 &60899337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2230,7 +2230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &107521848
 GameObject:
@@ -2420,7 +2420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &113637407
 PrefabInstance:
@@ -4431,7 +4431,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &194758341
 GameObject:
@@ -4606,7 +4606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &212409498
 GameObject:
@@ -4623,7 +4623,7 @@ GameObject:
   - component: {fileID: 212409501}
   - component: {fileID: 212409500}
   m_Layer: 8
-  m_Name: Planet (7)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4656,7 +4656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Venus
+  planet_name: 
 --- !u!114 &212409501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5736,7 +5736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &288599220
 GameObject:
@@ -5840,7 +5840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &311059789
 GameObject:
@@ -5963,7 +5963,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!224 &315050142 stripped
 RectTransform:
@@ -9323,7 +9323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &430198798
 GameObject:
@@ -10964,7 +10964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Jupiter
+  planet_name: 
 --- !u!1001 &517788674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11304,7 +11304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Saturn
+  planet_name: 
 --- !u!1 &534011596
 GameObject:
   m_ObjectHideFlags: 0
@@ -11425,7 +11425,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Venus
+  planet_name: 
 --- !u!1001 &538216221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12409,7 +12409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f815ce7b3c9eed4e8b4f865fcdf8a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curr_planet: {fileID: 534011602}
+  curr_planet: {fileID: 0}
 --- !u!1 &583677886
 GameObject:
   m_ObjectHideFlags: 0
@@ -13150,7 +13150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &597930524
 GameObject:
@@ -13167,7 +13167,7 @@ GameObject:
   - component: {fileID: 597930527}
   - component: {fileID: 597930526}
   m_Layer: 8
-  m_Name: Planet (9)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13200,7 +13200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Mars
+  planet_name: 
 --- !u!114 &597930527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15863,7 +15863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &749465494
 PrefabInstance:
@@ -16625,7 +16625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Mercury
+  planet_name: 
 --- !u!1001 &775341609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17082,7 +17082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &808166273
 GameObject:
@@ -17228,7 +17228,7 @@ GameObject:
   - component: {fileID: 816457444}
   - component: {fileID: 816457443}
   m_Layer: 8
-  m_Name: Planet (5)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17261,7 +17261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Venus
+  planet_name: 
 --- !u!114 &816457444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18023,7 +18023,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &836377083
 GameObject:
@@ -18388,7 +18388,7 @@ GameObject:
   - component: {fileID: 851092414}
   - component: {fileID: 851092413}
   m_Layer: 8
-  m_Name: Planet (11)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18421,7 +18421,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Venus
+  planet_name: 
 --- !u!114 &851092414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18757,7 +18757,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &864082601
 PrefabInstance:
@@ -19623,7 +19623,7 @@ GameObject:
   - component: {fileID: 897941707}
   - component: {fileID: 897941706}
   m_Layer: 8
-  m_Name: Planet (16)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19656,7 +19656,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Neptune
+  planet_name: 
 --- !u!114 &897941707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20424,7 +20424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &934468179
 GameObject:
@@ -20937,7 +20937,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &948563245
 GameObject:
@@ -22181,7 +22181,7 @@ GameObject:
   - component: {fileID: 983220932}
   - component: {fileID: 983220931}
   m_Layer: 8
-  m_Name: Planet (6)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22214,7 +22214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Venus
+  planet_name: 
 --- !u!114 &983220932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23312,7 +23312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &1039435033
 PrefabInstance:
@@ -23648,7 +23648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &1057027296
 PrefabInstance:
@@ -24316,7 +24316,7 @@ GameObject:
   - component: {fileID: 1061577550}
   - component: {fileID: 1061577549}
   m_Layer: 8
-  m_Name: Planet (15)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24349,7 +24349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Neptune
+  planet_name: 
 --- !u!114 &1061577550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25181,7 +25181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &1117851018
 PrefabInstance:
@@ -25603,7 +25603,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &1169551359
 PrefabInstance:
@@ -27903,7 +27903,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &1261111838
 GameObject:
@@ -28302,7 +28302,7 @@ GameObject:
   - component: {fileID: 1271401309}
   - component: {fileID: 1271401308}
   m_Layer: 8
-  m_Name: Planet (14)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28335,7 +28335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Neptune
+  planet_name: 
 --- !u!114 &1271401309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29080,7 +29080,7 @@ GameObject:
   - component: {fileID: 1287908344}
   - component: {fileID: 1287908343}
   m_Layer: 8
-  m_Name: Planet (1)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29113,7 +29113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Venus
+  planet_name: 
 --- !u!114 &1287908344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29525,7 +29525,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Pluto
+  planet_name: 
 --- !u!1001 &1303130079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29789,7 +29789,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &1314647691
 PrefabInstance:
@@ -30754,7 +30754,7 @@ GameObject:
   - component: {fileID: 1350701908}
   - component: {fileID: 1350701907}
   m_Layer: 8
-  m_Name: Planet (4)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30787,7 +30787,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Venus
+  planet_name: 
 --- !u!114 &1350701908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30875,7 +30875,7 @@ GameObject:
   - component: {fileID: 1356850524}
   - component: {fileID: 1356850523}
   m_Layer: 8
-  m_Name: Planet (10)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30908,7 +30908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Mars
+  planet_name: 
 --- !u!114 &1356850524
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31101,7 +31101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Uranus
+  planet_name: 
 --- !u!1001 &1370912371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34076,7 +34076,7 @@ GameObject:
   - component: {fileID: 1500627119}
   - component: {fileID: 1500627118}
   m_Layer: 8
-  m_Name: Planet (8)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34109,7 +34109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Venus
+  planet_name: 
 --- !u!114 &1500627119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34671,8 +34671,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95a89785ad54dca43958adbe243ce88a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collapsed_state: {x: 1017, y: 352}
-  open_state: {x: 672, y: 352}
+  collapsed_state: {x: 1017, y: 392}
+  open_state: {x: 672, y: 392}
 --- !u!1 &1522087752
 GameObject:
   m_ObjectHideFlags: 0
@@ -35723,7 +35723,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1 &1599193515
 GameObject:
@@ -36519,7 +36519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Neptune
+  planet_name: 
 --- !u!1 &1628868572
 GameObject:
   m_ObjectHideFlags: 0
@@ -37060,7 +37060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &1641911832
 PrefabInstance:
@@ -40250,7 +40250,7 @@ GameObject:
   - component: {fileID: 1847773811}
   - component: {fileID: 1847773810}
   m_Layer: 8
-  m_Name: Planet (12)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40283,7 +40283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Neptune
+  planet_name: 
 --- !u!114 &1847773811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43038,7 +43038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &1935876858
 PrefabInstance:
@@ -43297,7 +43297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line_materials:
-  - {fileID: 2100000, guid: 3df57a9156cf18d4890c06fba81f213e, type: 2}
+  - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
 --- !u!1001 &1952244660
 PrefabInstance:
@@ -43818,7 +43818,7 @@ GameObject:
   - component: {fileID: 2014977916}
   - component: {fileID: 2014977915}
   m_Layer: 8
-  m_Name: Planet (17)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43851,7 +43851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Neptune
+  planet_name: 
 --- !u!114 &2014977916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44201,7 +44201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b51907f37d97daf488c5207c505365b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui_inv: {fileID: 434154748}
+  ui_inv: {fileID: 0}
 --- !u!1001 &2042220483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45090,7 +45090,7 @@ GameObject:
   - component: {fileID: 2081507086}
   - component: {fileID: 2081507085}
   m_Layer: 8
-  m_Name: Planet (13)
+  m_Name: Planet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45123,7 +45123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Neptune
+  planet_name: 
 --- !u!114 &2081507086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46477,7 +46477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planet_name: Mars
+  planet_name: 
 --- !u!1001 &2141064925
 PrefabInstance:
   m_ObjectHideFlags: 0

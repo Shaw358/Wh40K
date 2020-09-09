@@ -25,7 +25,8 @@ public class PlanetFleetMenu : MonoBehaviour
     private List<Fleet> fleets = new List<Fleet>();
     private List<int> fleets_selected = new List<int>();
     private List<GameObject> fleet_cards = new List<GameObject>();
-    private List<Fleet> local_fleets = new List<Fleet>();
+
+    private List<Fleet> fleets_to_move = new List<Fleet>();
 
     private List<MovingFleet> fleet_pool = new List<MovingFleet>();
 
@@ -48,7 +49,7 @@ public class PlanetFleetMenu : MonoBehaviour
     private void Awake()
     {
         GameObject temp_fleet_pool = GameObject.Find("fleet_pool");
-        for(int i = 0; i < temp_fleet_pool.transform.childCount; i++)
+        for (int i = 0; i < temp_fleet_pool.transform.childCount; i++)
         {
             fleet_pool.Add(temp_fleet_pool.transform.GetChild(i).gameObject.GetComponent<MovingFleet>());
         }
@@ -162,6 +163,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     public void CardTransferFleetSelector(SELECTION_TYPE FLEET_SELECTION_TYPE, int s_index /*sibling index*/)
     {
+        List<Fleet> local_fleets = new List<Fleet>();
         ui_move.Enable(true);
 
         switch (FLEET_SELECTION_TYPE)
@@ -224,17 +226,18 @@ public class PlanetFleetMenu : MonoBehaviour
                 break;
         }
         fleet_selector.SetFleets(local_fleets);
+        local_fleets = fleets_to_move;
     }
 
     public void ClearFleetsSelected(SELECTION_TYPE TYPE)
     {
-        switch(TYPE)
+        switch (TYPE)
         {
             case SELECTION_TYPE.SINGLE:
                 fleets_selected.Clear();
                 break;
             case SELECTION_TYPE.SHIFT:
-                if(fleets_selected.Count > 1)
+                if (fleets_selected.Count > 1)
                 {
                     int first_remove = 1;
                     fleets_selected.RemoveRange(first_remove, fleets_selected.Count - 1);
@@ -250,21 +253,23 @@ public class PlanetFleetMenu : MonoBehaviour
 
     public List<Fleet> GetFleetsSelected()
     {
-        return local_fleets;
+        return fleets_to_move;
     }
 
     #endregion
 
     #region Moving Fleets
 
-    public void MoveFleetOnMap()
+    public void MoveFleetOnMap(TravelLanes target)
     {
-        for(int i = 0; i < fleet_pool.Count; i++)
+        for (int i = 0; i < fleet_pool.Count; i++)
         {
-            if(!fleet_pool[i].gameObject.activeSelf)
+            if (!fleet_pool[i].gameObject.activeSelf)
             {
+                TravelLanes spawn_point = curr_planet.GetComponent<TravelLanes>();
                 fleet_pool[i].gameObject.SetActive(true);
-                fleet_pool[i].SetFleetsToTransfer(local_fleets, curr_planet);
+                fleet_pool[i].transform.position = curr_planet.transform.position;
+                fleet_pool[i].Activate(fleets_to_move, target, spawn_point);
                 break;
             }
             else
