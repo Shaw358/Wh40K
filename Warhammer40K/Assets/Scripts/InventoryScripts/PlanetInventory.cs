@@ -9,7 +9,7 @@ public class PlanetInventory : Planet
 
     private void Awake()
     {
-        //i swear this is just for debugging
+        //i swear this is just for debugging, don't hurt me
         fleets.Add((Fleet) ScriptableObject.CreateInstance(typeof(Fleet)));
         fleets.Add((Fleet) ScriptableObject.CreateInstance(typeof(Fleet)));
         fleets.Add((Fleet)ScriptableObject.CreateInstance(typeof(Fleet)));
@@ -56,9 +56,15 @@ public class PlanetInventory : Planet
         fleets[3].AddShipToFleet(ship9);
     }
 
+    #region Getters/setters
     public List<Fleet> GetFleets()
     {
         return fleets;
+    }
+
+    public void AddFleets(List<Fleet> fleets_to_add)
+    {
+        fleets.AddRange(fleets_to_add);
     }
 
     public string GetName()
@@ -70,4 +76,5 @@ public class PlanetInventory : Planet
     {
         return max_fleet_count;
     }
+    #endregion
 }

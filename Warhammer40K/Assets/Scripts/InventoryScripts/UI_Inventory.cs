@@ -72,6 +72,7 @@ public class UI_Inventory : MonoBehaviour
         SortCardHierarchy();
     }
 
+    //shows the sorted cards to the player by changing the gameobject hierarchy
     private void SortCardHierarchy()
     {
         for (int i = 0; i < ship_cards.Count; i++)
@@ -80,6 +81,7 @@ public class UI_Inventory : MonoBehaviour
         }
     }
 
+    //gets all cards once
     private void PullCards()
     {
         ship_cards.AddRange(transform.GetComponentsInChildren<Card>());

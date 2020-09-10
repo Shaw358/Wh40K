@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class TravelLanes : MonoBehaviour
 {
+    /// <summary>
+    /// Spawns Line renderers between planets
+    /// </summary>
     List<LineRenderer> line_renderer = new List<LineRenderer>();
     private List<PlanetInventory> accessible_planets = new List<PlanetInventory>();
 
     List<GameObject> connected_planets = new List<GameObject>();
     [SerializeField] private Material[] line_materials;
 
+    //gets planets within range, checks if they are already connected with them, if not they will spawn a lane otherwise it is ingored
     public void Setup()
     {
         int radius = 15;
@@ -49,6 +53,8 @@ public class TravelLanes : MonoBehaviour
         }
     }
 
+    #region Getters/setters
+
     public void SetConnectedPlanet(GameObject planet)
     {
         connected_planets.Add(planet);
@@ -63,6 +69,8 @@ public class TravelLanes : MonoBehaviour
     {
         line_renderer.Add(line_rend_to_add);
     }
+
+    #endregion
 
     public void SetLineMaterial(int index)
     {

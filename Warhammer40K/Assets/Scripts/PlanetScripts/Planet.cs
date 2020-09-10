@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Planet : MonoBehaviour
 {
+    /// <summary>
+    /// Overall class to keep track of basic stats that belong on every planet
+    /// </summary>
     protected int max_fleet_count;
 
     [SerializeField] protected string planet_name;
@@ -23,6 +26,7 @@ public class Planet : MonoBehaviour
         }
     }
 
+    //sends wether you wish to select or move fleets to the PlaneetFleetMenu
     private void OnMouseOver()
     {
         //TODO: Find alternative for getcomponent
@@ -32,7 +36,7 @@ public class Planet : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(1))
         {
-            pfm.MoveFleetOnMap();
+            pfm.MoveFleetOnMap(GetComponentInChildren<TravelLanes>());
         }
     }
 }

@@ -5,6 +5,10 @@ using ShipEnums;
 
 public class Ship : ScriptableObject
 {
+    /// <summary>
+    /// This class keeps track of a ship, it is supposed to be in a fleet from which it can move
+    /// </summary>
+    
     //basic stats
     protected float supply;
     protected float card_scale;
@@ -28,6 +32,8 @@ public class Ship : ScriptableObject
         faction = temp_faction;
         ship_class = temp_ship_class;
     }
+
+    #region Getters/setters
 
     public ObjectHealth GetObjectHealth()
     {
@@ -63,4 +69,6 @@ public class Ship : ScriptableObject
     {
         return supply_consumption;
     }
+
+    #endregion
 }

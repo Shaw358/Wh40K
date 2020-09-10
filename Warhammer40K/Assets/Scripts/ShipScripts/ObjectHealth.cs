@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class ObjectHealth : ScriptableObject
 {
+    /// <summary>
+    /// This class will keep track of the health of the ships
+    /// </summary>
     private int total_health;
     private int health;
+
+    #region Getters/setters
 
     public void SetHealth(int temp_health)
     {
@@ -27,4 +32,6 @@ public class ObjectHealth : ScriptableObject
     {
         health += anAmount;
     }
+
+    #endregion
 }

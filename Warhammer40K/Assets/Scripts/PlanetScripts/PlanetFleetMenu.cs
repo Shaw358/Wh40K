@@ -7,6 +7,9 @@ using UnityEngine.UI;
 
 public class PlanetFleetMenu : MonoBehaviour
 {
+    /// <summary>
+    /// Displays fleets on the menu when clicking on a planet
+    /// </summary>
     FleetSelector fleet_selector;
     InventoryUiMovement ui_move;
 
@@ -268,7 +271,6 @@ public class PlanetFleetMenu : MonoBehaviour
             {
                 TravelLanes spawn_point = curr_planet.GetComponent<TravelLanes>();
                 fleet_pool[i].gameObject.SetActive(true);
-                fleet_pool[i].transform.position = curr_planet.transform.position;
                 fleet_pool[i].Activate(fleets_to_move, target, spawn_point);
                 break;
             }
