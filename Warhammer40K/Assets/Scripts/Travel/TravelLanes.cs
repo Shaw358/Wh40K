@@ -25,6 +25,11 @@ public class TravelLanes : MonoBehaviour
             accessible_planets.Add(planets_in_range[j].gameObject.GetComponent<PlanetInventory>());
         }
 
+        if(accessible_planets.Contains(gameObject.GetComponentInParent<PlanetInventory>()))
+        {
+            accessible_planets.Remove(gameObject.GetComponentInParent<PlanetInventory>());
+        }
+
         for (int i = 0; i < planets_in_range.Length - 1; i++)
         {
             if (!connected_planets.Contains(planets_in_range[i].gameObject))

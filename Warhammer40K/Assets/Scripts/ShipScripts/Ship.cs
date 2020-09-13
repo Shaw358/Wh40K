@@ -12,8 +12,8 @@ public class Ship : ScriptableObject
     //basic stats
     protected float supply;
     protected float card_scale;
-    private int power;
-    private int influence;
+    private int power = 0;
+    private int influence = 0;
     private Captain captain;
     protected string ship_name;
     protected FACTION faction;

@@ -269,9 +269,8 @@ public class PlanetFleetMenu : MonoBehaviour
         {
             if (!fleet_pool[i].gameObject.activeSelf)
             {
-                TravelLanes spawn_point = curr_planet.GetComponent<TravelLanes>();
                 fleet_pool[i].gameObject.SetActive(true);
-                fleet_pool[i].Activate(fleets_to_move, target, spawn_point);
+                fleet_pool[i].Activate(fleets_to_move, target, curr_planet.GetLane());
                 break;
             }
             else

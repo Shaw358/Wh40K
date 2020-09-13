@@ -26,6 +26,12 @@ public class Planet : MonoBehaviour
         }
     }
 
+    public TravelLanes GetLane()
+    {
+        TravelLanes[] lanes = GetComponentsInChildren<TravelLanes>();
+        return lanes[0];
+    }
+
     //sends wether you wish to select or move fleets to the PlaneetFleetMenu
     private void OnMouseOver()
     {
@@ -36,7 +42,8 @@ public class Planet : MonoBehaviour
         }
         if(Input.GetMouseButtonDown(1))
         {
-            pfm.MoveFleetOnMap(GetComponentInChildren<TravelLanes>());
+            TravelLanes[] lanes = GetComponentsInChildren<TravelLanes>();
+            pfm.MoveFleetOnMap(lanes[0]);
         }
     }
 }

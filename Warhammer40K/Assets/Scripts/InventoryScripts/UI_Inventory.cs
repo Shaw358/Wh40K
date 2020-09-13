@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class UI_Inventory : MonoBehaviour
 {
-    private static int max_cards_on_screen = 150;
+    //private static int max_cards_on_screen = 150;
     private List<Card> ship_cards = new List<Card>();
     private List<Ship> ships = new List<Ship>();
     private int sibling_index;

@@ -6,6 +6,11 @@ public class ButtonSorterHandler : MonoBehaviour
 {
     public UI_Inventory ui_inv;
 
+    private void Awake()
+    {
+        ui_inv = GameObject.Find("all_ship_cards").GetComponent<UI_Inventory>();
+    }
+
     public void ChangeSortingType(int index)
     {
         switch(index)

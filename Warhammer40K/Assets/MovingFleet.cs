@@ -15,6 +15,8 @@ public class MovingFleet : MonoBehaviour
 
     private Vector3 pool_position;
 
+    private float fleet_speed = 10;
+
     private enum STATES
     {
         ACTIVE,
@@ -47,21 +49,15 @@ public class MovingFleet : MonoBehaviour
     {
         TravelLanes curr_planet = first_planet;
         PlanetInventory lowest_distance_planet = null;
-        float lowest_distance_value = 0;
+        float lowest_distance_value = 10000000;
 
         foreach (PlanetInventory acc_planets in first_planet.GetAccessiblePlanets())
         {
             float distance = Vector3.Distance(acc_planets.transform.position, curr_planet.gameObject.transform.position);
-            if (distance != 0)
+            if (distance < lowest_distance_value)
             {
-                if (distance < lowest_distance_value)
-                {
-                    lowest_distance_planet = acc_planets;
-                    lowest_distance_value = distance;
-                }
-            }
-            else
-            {
+                curr_planet = acc_planets.GetComponentInChildren<TravelLanes>();
+
                 lowest_distance_planet = acc_planets;
                 lowest_distance_value = distance;
             }
@@ -69,31 +65,66 @@ public class MovingFleet : MonoBehaviour
 
         path.Add(lowest_distance_planet.gameObject);
 
+        int i = 0;
+
         while (true)
         {
-            if (curr_planet.GetAccessiblePlanets().Count > minimum_connection_lanes)
+            i++;
+            if (path[path.Count - 1] == target_planet.gameObject)
             {
-                foreach (PlanetInventory acc_planets in first_planet.GetAccessiblePlanets())
+                break;
+            }
+
+            print(curr_planet.GetAccessiblePlanets().Count);
+
+            if (curr_planet.GetAccessiblePlanets().Count > 1)
+            {
+                if (curr_planet.GetAccessiblePlanets().Contains(target_planet.GetComponentInParent<PlanetInventory>()))
                 {
-                    float distance = Vector3.Distance(acc_planets.transform.position, curr_planet.gameObject.transform.position);
-                    if (distance != 0)
+                    print("Step 1");
+                    foreach(PlanetInventory acc_planets in curr_planet.GetAccessiblePlanets())
                     {
-                        if (distance < lowest_distance_value)
+                        if(acc_planets.GetComponentInChildren<TravelLanes>() == target_planet)
+                        {
+                            print("Step 2");
+                            path.Add(acc_planets.gameObject);
+                        }
+                    }
+                    break;
+                }
+                else
+                {
+                    //print("step 1");
+                    foreach (PlanetInventory acc_planets in curr_planet.GetAccessiblePlanets())
+                    {
+                        //print("step 2");
+
+                        float distance = Vector3.Distance(acc_planets.transform.position, curr_planet.gameObject.transform.position);
+                        if (distance != 0)
+                        {
+                            print("step 3");
+                            if (distance < lowest_distance_value)
+                            {
+                                print("step 4");
+                                curr_planet = acc_planets.GetComponentInChildren<TravelLanes>();
+
+                                lowest_distance_planet = acc_planets;
+                                lowest_distance_value = distance;
+                            }
+                        }
+                        else
                         {
                             lowest_distance_planet = acc_planets;
                             lowest_distance_value = distance;
                         }
                     }
-                    else
-                    {
-                        lowest_distance_planet = acc_planets;
-                        lowest_distance_value = distance;
-                    }
+                    path.Add(lowest_distance_planet.gameObject);
                 }
-                path.Add(lowest_distance_planet.gameObject);
             }
-            if (path[path.Count] == target_planet)
+            //Debug.Log("Planets to travel: " + i);
+            if (i == 20)
             {
+                Debug.Log("Pathfinding Failed!");
                 break;
             }
         }
@@ -102,11 +133,13 @@ public class MovingFleet : MonoBehaviour
 
     private void Update()
     {
+        //print("Pathfinding succeeded");
+        //print(path.Count);
         if (state == STATES.ACTIVE)
         {
             if (Vector3.Distance(path[current_planet_index].transform.position, gameObject.transform.position) < distance_threshold)
             {
-                if (path.Count == current_planet_index)
+                if (path.Count - 1 == current_planet_index)
                 {
                     Arrived();
                 }
@@ -116,6 +149,7 @@ public class MovingFleet : MonoBehaviour
                 }
             }
             transform.LookAt(path[current_planet_index].gameObject.transform);
+            transform.position += transform.forward * Time.deltaTime * fleet_speed;
         }
     }
 
@@ -123,7 +157,7 @@ public class MovingFleet : MonoBehaviour
     {
         state = STATES.NOT_ACTIVE;
         //do animation or something?
-        path[path.Count].GetComponent<PlanetInventory>().AddFleets(fleets_to_transfer);
+        path[path.Count -1].GetComponent<PlanetInventory>().AddFleets(fleets_to_transfer);
 
         ClearFleets();
 
