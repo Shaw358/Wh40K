@@ -8,7 +8,7 @@ public class TravelLanes : MonoBehaviour
     /// Spawns Line renderers between planets
     /// </summary>
     List<LineRenderer> line_renderer = new List<LineRenderer>();
-    private List<PlanetInventory> accessible_planets = new List<PlanetInventory>();
+    private List<Planet> accessible_planets = new List<Planet>();
 
     List<GameObject> connected_planets = new List<GameObject>();
     [SerializeField] private Material[] line_materials;
@@ -22,12 +22,12 @@ public class TravelLanes : MonoBehaviour
 
         for (int j = 0; j < planets_in_range.Length; j++)
         {
-            accessible_planets.Add(planets_in_range[j].gameObject.GetComponent<PlanetInventory>());
+            accessible_planets.Add(planets_in_range[j].gameObject.GetComponent<Planet>());
         }
 
-        if(accessible_planets.Contains(gameObject.GetComponentInParent<PlanetInventory>()))
+        if(accessible_planets.Contains(gameObject.GetComponentInParent<Planet>()))
         {
-            accessible_planets.Remove(gameObject.GetComponentInParent<PlanetInventory>());
+            accessible_planets.Remove(gameObject.GetComponentInParent<Planet>());
         }
 
         for (int i = 0; i < planets_in_range.Length - 1; i++)
@@ -65,7 +65,7 @@ public class TravelLanes : MonoBehaviour
         connected_planets.Add(planet);
     }
 
-    public List<PlanetInventory> GetAccessiblePlanets()
+    public List<Planet> GetAccessiblePlanets()
     {
         return accessible_planets;
     }

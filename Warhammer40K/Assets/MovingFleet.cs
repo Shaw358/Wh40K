@@ -37,7 +37,7 @@ public class MovingFleet : MonoBehaviour
         fleets_to_transfer.Clear();
     }
 
-    public void Activate(List<Fleet> fleets, TravelLanes target, TravelLanes spawn_planet)
+    public void Activate(List<Fleet> fleets, TravelLanes target, Planet spawn_planet)
     {
         target_planet = target;
         transform.position = spawn_planet.transform.position;
@@ -45,18 +45,18 @@ public class MovingFleet : MonoBehaviour
         SearchFastestPath(spawn_planet);
     }
 
-    private void SearchFastestPath(TravelLanes first_planet)
+    private void SearchFastestPath(Planet first_planet)
     {
-        TravelLanes curr_planet = first_planet;
-        PlanetInventory lowest_distance_planet = null;
+        Planet curr_planet = first_planet;
+        Planet lowest_distance_planet = null;
         float lowest_distance_value = 10000000;
 
-        foreach (PlanetInventory acc_planets in first_planet.GetAccessiblePlanets())
+        foreach (Planet acc_planets in first_planet.GetTravelLanes().GetAccessiblePlanets())
         {
             float distance = Vector3.Distance(acc_planets.transform.position, curr_planet.gameObject.transform.position);
             if (distance < lowest_distance_value)
             {
-                curr_planet = acc_planets.GetComponentInChildren<TravelLanes>();
+                curr_planet = acc_planets.GetComponentInChildren<Planet>();
 
                 lowest_distance_planet = acc_planets;
                 lowest_distance_value = distance;
@@ -75,14 +75,14 @@ public class MovingFleet : MonoBehaviour
                 break;
             }
 
-            print(curr_planet.GetAccessiblePlanets().Count);
+            print(curr_planet.GetTravelLanes().GetAccessiblePlanets().Count);
 
-            if (curr_planet.GetAccessiblePlanets().Count > 1)
+            if (curr_planet.GetTravelLanes().GetAccessiblePlanets().Count > 1)
             {
-                if (curr_planet.GetAccessiblePlanets().Contains(target_planet.GetComponentInParent<PlanetInventory>()))
+                if (curr_planet.GetTravelLanes().GetAccessiblePlanets().Contains(target_planet.GetComponentInParent<Planet>()))
                 {
                     print("Step 1");
-                    foreach(PlanetInventory acc_planets in curr_planet.GetAccessiblePlanets())
+                    foreach(Planet acc_planets in curr_planet.GetTravelLanes().GetAccessiblePlanets())
                     {
                         if(acc_planets.GetComponentInChildren<TravelLanes>() == target_planet)
                         {
@@ -95,7 +95,7 @@ public class MovingFleet : MonoBehaviour
                 else
                 {
                     //print("step 1");
-                    foreach (PlanetInventory acc_planets in curr_planet.GetAccessiblePlanets())
+                    foreach (Planet acc_planets in curr_planet.GetTravelLanes().GetAccessiblePlanets())
                     {
                         //print("step 2");
 
@@ -106,7 +106,7 @@ public class MovingFleet : MonoBehaviour
                             if (distance < lowest_distance_value)
                             {
                                 print("step 4");
-                                curr_planet = acc_planets.GetComponentInChildren<TravelLanes>();
+                                curr_planet = acc_planets.GetComponent<Planet>();
 
                                 lowest_distance_planet = acc_planets;
                                 lowest_distance_value = distance;
@@ -157,7 +157,7 @@ public class MovingFleet : MonoBehaviour
     {
         state = STATES.NOT_ACTIVE;
         //do animation or something?
-        path[path.Count -1].GetComponent<PlanetInventory>().AddFleets(fleets_to_transfer);
+        path[path.Count -1].GetComponent<Planet>().GetInventory().AddItems(fleets_to_transfer);
 
         ClearFleets();
 

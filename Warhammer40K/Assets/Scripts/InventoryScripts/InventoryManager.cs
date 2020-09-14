@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class InventoryManager : MonoBehaviour
 {
-    Inventory inventory;
+    //Inventory inventory;
 }

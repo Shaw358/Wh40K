@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using CardManagement;
 using System.Collections.Generic;
 
 public class Fleet : ScriptableObject

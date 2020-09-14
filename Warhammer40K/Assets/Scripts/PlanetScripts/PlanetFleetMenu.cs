@@ -17,7 +17,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     private static Vector3 position_correction;
 
-    [SerializeField] private PlanetInventory curr_planet;
+    [SerializeField] private Planet curr_planet;
     private TextMeshProUGUI curr_planet_name;
 
     private Color fleet_count_text_color;
@@ -100,7 +100,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     #region Showing ships/fleets in the UI menu's
 
-    public void Activate(PlanetInventory inv)
+    public void Activate(Planet inv)
     {
         ui_move.Enable(true);
         CURR_STATE = STATE.ACTIVE;
@@ -108,10 +108,10 @@ public class PlanetFleetMenu : MonoBehaviour
         curr_planet = inv;
         //curr_planet.GetComponentInChildren<TravelLanes>().SetLineMaterial(1);
 
-        fleets = curr_planet.GetFleets();
+        fleets = curr_planet.GetInventory().GetItems();
         curr_planet_name.text = curr_planet.GetName();
 
-        int fleet_amount = curr_planet.GetFleets().Count;
+        int fleet_amount = curr_planet.GetInventory().GetItems().Count;
 
         for (int i = 0; i < fleet_amount; i++)
         {
@@ -123,7 +123,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     public void Refresh()
     {
-        fleets = curr_planet.GetFleets();
+        fleets = curr_planet.GetInventory().GetItems();
         curr_planet_name.text = curr_planet.GetName();
 
         SetText();
@@ -140,7 +140,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     private void SetText()
     {
-        if (curr_planet.GetFleets().Count < curr_planet.GetMaxFleetCount())
+        if (curr_planet.GetInventory().GetItems().Count < curr_planet.GetMaxFleetCount())
         {
             //planet_fleet_count_text.color = reset_color;
         }
@@ -149,7 +149,7 @@ public class PlanetFleetMenu : MonoBehaviour
             //planet_fleet_count_text.color = fleet_count_text_color;
         }
 
-        planet_fleet_count_text.text = "Ship Capacity: " + curr_planet.GetFleets().Count + "/ " + curr_planet.GetMaxFleetCount();
+        planet_fleet_count_text.text = "Ship Capacity: " + curr_planet.GetInventory().GetItems().Count + "/ " + curr_planet.GetMaxFleetCount();
 
         //TODO:
         //supply text
@@ -270,7 +270,7 @@ public class PlanetFleetMenu : MonoBehaviour
             if (!fleet_pool[i].gameObject.activeSelf)
             {
                 fleet_pool[i].gameObject.SetActive(true);
-                fleet_pool[i].Activate(fleets_to_move, target, curr_planet.GetLane());
+                fleet_pool[i].Activate(fleets_to_move, target, curr_planet);
                 break;
             }
             else

@@ -399,6 +399,7 @@ GameObject:
   - component: {fileID: 7486371}
   - component: {fileID: 7486370}
   - component: {fileID: 7486369}
+  - component: {fileID: 7486373}
   - component: {fileID: 7486368}
   m_Layer: 8
   m_Name: Planet
@@ -431,7 +432,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7486366}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -507,6 +508,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7486366}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &7486373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7486366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &21044978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1321,6 +1334,7 @@ GameObject:
   - component: {fileID: 45061080}
   - component: {fileID: 45061079}
   - component: {fileID: 45061078}
+  - component: {fileID: 45061082}
   - component: {fileID: 45061077}
   m_Layer: 8
   m_Name: Planet
@@ -1353,7 +1367,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 45061075}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -1429,6 +1443,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 45061075}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &45061082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 45061075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &46298862 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7683107557994242350, guid: ea68154238f45de428ee68d1cb545551,
@@ -1634,6 +1660,7 @@ GameObject:
   - component: {fileID: 56152313}
   - component: {fileID: 56152312}
   - component: {fileID: 56152316}
+  - component: {fileID: 56152318}
   - component: {fileID: 56152317}
   m_Layer: 8
   m_Name: Planet
@@ -1738,10 +1765,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 56152311}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
+--- !u!114 &56152318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 56152311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &60899337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4621,6 +4660,7 @@ GameObject:
   - component: {fileID: 212409503}
   - component: {fileID: 212409502}
   - component: {fileID: 212409501}
+  - component: {fileID: 212409505}
   - component: {fileID: 212409500}
   m_Layer: 8
   m_Name: Planet
@@ -4653,7 +4693,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 212409498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -4729,6 +4769,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 212409498}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &212409505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 212409498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &221385820
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10857,6 +10909,7 @@ GameObject:
   - component: {fileID: 515702993}
   - component: {fileID: 515702992}
   - component: {fileID: 515702996}
+  - component: {fileID: 515702998}
   - component: {fileID: 515702997}
   m_Layer: 8
   m_Name: Planet
@@ -10961,10 +11014,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 515702991}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
+--- !u!114 &515702998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 515702991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &517788674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11197,6 +11262,7 @@ GameObject:
   - component: {fileID: 524896207}
   - component: {fileID: 524896206}
   - component: {fileID: 524896210}
+  - component: {fileID: 524896212}
   - component: {fileID: 524896211}
   m_Layer: 8
   m_Name: Planet
@@ -11301,10 +11367,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 524896205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
+--- !u!114 &524896212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524896205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &534011596
 GameObject:
   m_ObjectHideFlags: 0
@@ -11318,6 +11396,7 @@ GameObject:
   - component: {fileID: 534011598}
   - component: {fileID: 534011597}
   - component: {fileID: 534011601}
+  - component: {fileID: 534011603}
   - component: {fileID: 534011602}
   m_Layer: 8
   m_Name: Planet
@@ -11422,10 +11501,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 534011596}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
+--- !u!114 &534011603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534011596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &538216221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13165,6 +13256,7 @@ GameObject:
   - component: {fileID: 597930529}
   - component: {fileID: 597930528}
   - component: {fileID: 597930527}
+  - component: {fileID: 597930531}
   - component: {fileID: 597930526}
   m_Layer: 8
   m_Name: Planet
@@ -13197,7 +13289,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 597930524}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -13273,6 +13365,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597930524}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &597930531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597930524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &609564320
 GameObject:
   m_ObjectHideFlags: 0
@@ -16518,6 +16622,7 @@ GameObject:
   - component: {fileID: 769484346}
   - component: {fileID: 769484345}
   - component: {fileID: 769484349}
+  - component: {fileID: 769484351}
   - component: {fileID: 769484350}
   m_Layer: 8
   m_Name: Planet
@@ -16622,10 +16727,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 769484344}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
+--- !u!114 &769484351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 769484344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &775341609
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17226,6 +17343,7 @@ GameObject:
   - component: {fileID: 816457446}
   - component: {fileID: 816457445}
   - component: {fileID: 816457444}
+  - component: {fileID: 816457448}
   - component: {fileID: 816457443}
   m_Layer: 8
   m_Name: Planet
@@ -17258,7 +17376,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 816457441}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -17334,6 +17452,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 816457441}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &816457448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816457441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &818032781
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18386,6 +18516,7 @@ GameObject:
   - component: {fileID: 851092416}
   - component: {fileID: 851092415}
   - component: {fileID: 851092414}
+  - component: {fileID: 851092418}
   - component: {fileID: 851092413}
   m_Layer: 8
   m_Name: Planet
@@ -18418,7 +18549,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 851092411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -18494,6 +18625,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851092411}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &851092418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851092411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &857829067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19621,6 +19764,7 @@ GameObject:
   - component: {fileID: 897941709}
   - component: {fileID: 897941708}
   - component: {fileID: 897941707}
+  - component: {fileID: 897941711}
   - component: {fileID: 897941706}
   m_Layer: 8
   m_Name: Planet
@@ -19653,7 +19797,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 897941704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -19729,6 +19873,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 897941704}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &897941711
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897941704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &901957596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22179,6 +22335,7 @@ GameObject:
   - component: {fileID: 983220934}
   - component: {fileID: 983220933}
   - component: {fileID: 983220932}
+  - component: {fileID: 983220936}
   - component: {fileID: 983220931}
   m_Layer: 8
   m_Name: Planet
@@ -22211,7 +22368,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 983220929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -22287,6 +22444,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983220929}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &983220936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 983220929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &984435301
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24314,6 +24483,7 @@ GameObject:
   - component: {fileID: 1061577552}
   - component: {fileID: 1061577551}
   - component: {fileID: 1061577550}
+  - component: {fileID: 1061577554}
   - component: {fileID: 1061577549}
   m_Layer: 8
   m_Name: Planet
@@ -24346,7 +24516,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1061577547}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -24422,6 +24592,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1061577547}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1061577554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061577547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1088213123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28300,6 +28482,7 @@ GameObject:
   - component: {fileID: 1271401311}
   - component: {fileID: 1271401310}
   - component: {fileID: 1271401309}
+  - component: {fileID: 1271401313}
   - component: {fileID: 1271401308}
   m_Layer: 8
   m_Name: Planet
@@ -28332,7 +28515,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271401306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -28408,6 +28591,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1271401306}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1271401313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271401306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1273567769
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29078,6 +29273,7 @@ GameObject:
   - component: {fileID: 1287908346}
   - component: {fileID: 1287908345}
   - component: {fileID: 1287908344}
+  - component: {fileID: 1287908348}
   - component: {fileID: 1287908343}
   m_Layer: 8
   m_Name: Planet
@@ -29110,7 +29306,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1287908341}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -29186,6 +29382,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1287908341}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1287908348
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1287908341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1296099870
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29418,6 +29626,7 @@ GameObject:
   - component: {fileID: 1301619715}
   - component: {fileID: 1301619714}
   - component: {fileID: 1301619718}
+  - component: {fileID: 1301619720}
   - component: {fileID: 1301619719}
   m_Layer: 8
   m_Name: Planet
@@ -29522,10 +29731,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1301619713}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
+--- !u!114 &1301619720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301619713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1303130079
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30752,6 +30973,7 @@ GameObject:
   - component: {fileID: 1350701910}
   - component: {fileID: 1350701909}
   - component: {fileID: 1350701908}
+  - component: {fileID: 1350701912}
   - component: {fileID: 1350701907}
   m_Layer: 8
   m_Name: Planet
@@ -30784,7 +31006,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1350701905}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -30860,6 +31082,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1350701905}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1350701912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1350701905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1356850521
 GameObject:
   m_ObjectHideFlags: 0
@@ -30873,6 +31107,7 @@ GameObject:
   - component: {fileID: 1356850526}
   - component: {fileID: 1356850525}
   - component: {fileID: 1356850524}
+  - component: {fileID: 1356850528}
   - component: {fileID: 1356850523}
   m_Layer: 8
   m_Name: Planet
@@ -30905,7 +31140,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1356850521}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -30981,6 +31216,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356850521}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1356850528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1356850521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1363541176
 GameObject:
   m_ObjectHideFlags: 0
@@ -30994,6 +31241,7 @@ GameObject:
   - component: {fileID: 1363541178}
   - component: {fileID: 1363541177}
   - component: {fileID: 1363541181}
+  - component: {fileID: 1363541183}
   - component: {fileID: 1363541182}
   m_Layer: 8
   m_Name: Planet
@@ -31098,10 +31346,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1363541176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
+--- !u!114 &1363541183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1363541176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1370912371
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34074,6 +34334,7 @@ GameObject:
   - component: {fileID: 1500627121}
   - component: {fileID: 1500627120}
   - component: {fileID: 1500627119}
+  - component: {fileID: 1500627123}
   - component: {fileID: 1500627118}
   m_Layer: 8
   m_Name: Planet
@@ -34106,7 +34367,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1500627116}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -34182,6 +34443,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1500627116}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1500627123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500627116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1502140963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36412,6 +36685,7 @@ GameObject:
   - component: {fileID: 1617283125}
   - component: {fileID: 1617283124}
   - component: {fileID: 1617283128}
+  - component: {fileID: 1617283130}
   - component: {fileID: 1617283129}
   m_Layer: 8
   m_Name: Planet
@@ -36516,10 +36790,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1617283123}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
+--- !u!114 &1617283130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617283123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1628868572
 GameObject:
   m_ObjectHideFlags: 0
@@ -40248,6 +40534,7 @@ GameObject:
   - component: {fileID: 1847773813}
   - component: {fileID: 1847773812}
   - component: {fileID: 1847773811}
+  - component: {fileID: 1847773815}
   - component: {fileID: 1847773810}
   m_Layer: 8
   m_Name: Planet
@@ -40280,7 +40567,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1847773808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -40356,6 +40643,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847773808}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1847773815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1847773808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1861047850
 GameObject:
   m_ObjectHideFlags: 0
@@ -43816,6 +44115,7 @@ GameObject:
   - component: {fileID: 2014977918}
   - component: {fileID: 2014977917}
   - component: {fileID: 2014977916}
+  - component: {fileID: 2014977920}
   - component: {fileID: 2014977915}
   m_Layer: 8
   m_Name: Planet
@@ -43848,7 +44148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2014977913}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -43924,6 +44224,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2014977913}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2014977920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014977913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &2017613471 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7683107557994242350, guid: ea68154238f45de428ee68d1cb545551,
@@ -45088,6 +45400,7 @@ GameObject:
   - component: {fileID: 2081507088}
   - component: {fileID: 2081507087}
   - component: {fileID: 2081507086}
+  - component: {fileID: 2081507090}
   - component: {fileID: 2081507085}
   m_Layer: 8
   m_Name: Planet
@@ -45120,7 +45433,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2081507083}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
@@ -45196,6 +45509,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2081507083}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2081507090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081507083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2085906113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46370,6 +46695,7 @@ GameObject:
   - component: {fileID: 2134802824}
   - component: {fileID: 2134802823}
   - component: {fileID: 2134802827}
+  - component: {fileID: 2134802829}
   - component: {fileID: 2134802828}
   m_Layer: 8
   m_Name: Planet
@@ -46474,10 +46800,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 2134802822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f8bfb22a108a74499992be8f337d6f9, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b5a5a537ffb3e7488aea328be03fd6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   planet_name: 
+--- !u!114 &2134802829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2134802822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d2919366cc1484b9dd9c28bca92972, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2141064925
 PrefabInstance:
   m_ObjectHideFlags: 0
