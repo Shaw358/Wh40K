@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class Inventory<T>
 {
@@ -19,15 +20,12 @@ public class Inventory<T>
         item_list.AddRange(items);
     }
 
-    public void RemoveItems(int first_index, int last_index = 0)
+    public void RemoveItems(List<T> to_remove)
     {
-        if (last_index != 0)
+        for (int i = 0; i < to_remove.Count; i++)
         {
-            item_list.RemoveRange(first_index, last_index);
-        }
-        else
-        {
-            item_list.RemoveAt(first_index);
+            int index = item_list.IndexOf(to_remove[i]);
+            item_list.RemoveAt(index);
         }
     }
 }

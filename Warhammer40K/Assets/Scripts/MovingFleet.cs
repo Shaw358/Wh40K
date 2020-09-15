@@ -32,20 +32,15 @@ public class MovingFleet : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    public void ClearFleets()
-    {
-        fleets_to_transfer.Clear();
-    }
-
     public void Activate(List<Fleet> fleets, TravelLanes target, Planet spawn_planet)
     {
         target_planet = target;
         transform.position = spawn_planet.transform.position;
         fleets_to_transfer.AddRange(fleets);
-        SearchFastestPath(spawn_planet);
+        FindPath(spawn_planet);
     }
 
-    private void SearchFastestPath(Planet first_planet)
+    private void FindPath(Planet first_planet)
     {
         Planet curr_planet = first_planet;
         Planet lowest_distance_planet = null;
@@ -75,18 +70,14 @@ public class MovingFleet : MonoBehaviour
                 break;
             }
 
-            print(curr_planet.GetTravelLanes().GetAccessiblePlanets().Count);
-
             if (curr_planet.GetTravelLanes().GetAccessiblePlanets().Count > 1)
             {
                 if (curr_planet.GetTravelLanes().GetAccessiblePlanets().Contains(target_planet.GetComponentInParent<Planet>()))
                 {
-                    print("Step 1");
                     foreach(Planet acc_planets in curr_planet.GetTravelLanes().GetAccessiblePlanets())
                     {
                         if(acc_planets.GetComponentInChildren<TravelLanes>() == target_planet)
                         {
-                            print("Step 2");
                             path.Add(acc_planets.gameObject);
                         }
                     }
@@ -94,18 +85,13 @@ public class MovingFleet : MonoBehaviour
                 }
                 else
                 {
-                    //print("step 1");
                     foreach (Planet acc_planets in curr_planet.GetTravelLanes().GetAccessiblePlanets())
                     {
-                        //print("step 2");
-
                         float distance = Vector3.Distance(acc_planets.transform.position, curr_planet.gameObject.transform.position);
                         if (distance != 0)
                         {
-                            print("step 3");
                             if (distance < lowest_distance_value)
                             {
-                                print("step 4");
                                 curr_planet = acc_planets.GetComponent<Planet>();
 
                                 lowest_distance_planet = acc_planets;
@@ -121,11 +107,10 @@ public class MovingFleet : MonoBehaviour
                     path.Add(lowest_distance_planet.gameObject);
                 }
             }
-            //Debug.Log("Planets to travel: " + i);
-            if (i == 20)
+            if (i == 200)
             {
                 Debug.Log("Pathfinding Failed!");
-                break;
+                throw new System.Exception("Our navigator could not find a path! The fleet is lost!\nWe have tried plotted course over 200 systems... yet we have failed.\nMay the Emperor protect us all!");
             }
         }
         state = STATES.ACTIVE;
@@ -133,7 +118,6 @@ public class MovingFleet : MonoBehaviour
 
     private void Update()
     {
-        //print("Pathfinding succeeded");
         //print(path.Count);
         if (state == STATES.ACTIVE)
         {
@@ -141,6 +125,7 @@ public class MovingFleet : MonoBehaviour
             {
                 if (path.Count - 1 == current_planet_index)
                 {
+                    print("For the glory of Rome");
                     Arrived();
                 }
                 else
@@ -157,11 +142,15 @@ public class MovingFleet : MonoBehaviour
     {
         state = STATES.NOT_ACTIVE;
         //do animation or something?
-        path[path.Count -1].GetComponent<Planet>().GetInventory().AddItems(fleets_to_transfer);
+        path[path.Count - 1].GetComponent<Planet>().GetInventory().AddItems(fleets_to_transfer);
 
-        ClearFleets();
-
+        Reset();
+    }
+    public void Reset()
+    {
+        fleets_to_transfer.Clear();
+        path.Clear();
         gameObject.SetActive(false);
-        //gameObject.transform.position = 
+        gameObject.transform.position = pool_position;
     }
 }

@@ -10,6 +10,7 @@ public class PlanetClickAction : MonoBehaviour
     {
         pfm = GameObject.FindGameObjectWithTag("planet_fleet_menu").GetComponentInChildren<PlanetFleetMenu>();
     }
+
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonDown(0))

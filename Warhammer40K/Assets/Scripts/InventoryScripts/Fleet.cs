@@ -6,6 +6,8 @@ public class Fleet : ScriptableObject
     private List<Ship> ships = new List<Ship>();
     private int supply_consumption;
 
+    //private Inventory
+
     public Ship GetShips(int index)
     {
         return ships[index];

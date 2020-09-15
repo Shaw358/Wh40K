@@ -9,6 +9,7 @@ public class Planet : MonoBehaviour
     /// </summary>
     protected int max_fleet_count;
     private Inventory<Fleet> fleets = new Inventory<Fleet>();
+
     [SerializeField] protected string planet_name;
     private TravelLanes travel_lanes;
 
@@ -68,16 +69,9 @@ public class Planet : MonoBehaviour
         #endregion
     }
 
-    public void RemoveFleets(int first_fleet, int last_fleet = 0)
+    public void RemoveFleets(List<int> fleets_to_remove)
     {
-        if(last_fleet != 0)
-        {
-            fleets.RemoveItems(first_fleet, last_fleet);
-        }
-        else
-        {
-            fleets.RemoveItems(first_fleet);
-        }
+        //fleets.RemoveItems(fleets_to_remove);
     }
 
     public TravelLanes GetLane()
@@ -105,7 +99,4 @@ public class Planet : MonoBehaviour
     {
         return travel_lanes;
     }
-
-    //sends wether you wish to select or move fleets to the PlaneetFleetMenu
-
 }

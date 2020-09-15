@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using TMPro;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UI;
@@ -32,6 +33,9 @@ public class PlanetFleetMenu : MonoBehaviour
     private List<Fleet> fleets_to_move = new List<Fleet>();
 
     private List<MovingFleet> fleet_pool = new List<MovingFleet>();
+    int fleet_amount;
+
+    [SerializeField] private GameObject moving_fleet;
 
     public enum STATE
     {
@@ -111,31 +115,16 @@ public class PlanetFleetMenu : MonoBehaviour
         fleets = curr_planet.GetInventory().GetItems();
         curr_planet_name.text = curr_planet.GetName();
 
-        int fleet_amount = curr_planet.GetInventory().GetItems().Count;
-
-        for (int i = 0; i < fleet_amount; i++)
-        {
-            fleet_cards[i].SetActive(true);
-        }
-
+        fleet_amount = curr_planet.GetInventory().GetItems().Count;
+        Refresh();
         SetText();
     }
 
     public void Refresh()
     {
         fleets = curr_planet.GetInventory().GetItems();
-        curr_planet_name.text = curr_planet.GetName();
-
+        ActivateFleetCards();
         SetText();
-    }
-
-    private void SortCardHierarchy(int fleet_amount)
-    {
-        for (int i = 0; i < fleet_amount; i++)
-        {
-            Debug.Log(fleet_cards[i]);
-            fleet_cards[i].gameObject.transform.SetSiblingIndex(i);
-        }
     }
 
     private void SetText()
@@ -229,7 +218,7 @@ public class PlanetFleetMenu : MonoBehaviour
                 break;
         }
         fleet_selector.SetFleets(local_fleets);
-        local_fleets = fleets_to_move;
+        fleets_to_move = local_fleets;
     }
 
     public void ClearFleetsSelected(SELECTION_TYPE TYPE)
@@ -259,12 +248,26 @@ public class PlanetFleetMenu : MonoBehaviour
         return fleets_to_move;
     }
 
+    private void ActivateFleetCards()
+    {
+        for (int i = 0; i < fleet_cards.Count - 1; i++)
+        {
+            fleet_cards[i].SetActive(false);
+        }
+        for (int i = 0; i < fleets.Count; i++)
+        {
+            fleet_cards[i].SetActive(true);
+        }
+    }
+
     #endregion
 
     #region Moving Fleets
 
     public void MoveFleetOnMap(TravelLanes target)
     {
+        curr_planet.GetInventory().RemoveItems(fleets_to_move);
+
         for (int i = 0; i < fleet_pool.Count; i++)
         {
             if (!fleet_pool[i].gameObject.activeSelf)
@@ -278,8 +281,8 @@ public class PlanetFleetMenu : MonoBehaviour
                 //add a new fleet object
             }
         }
+        Refresh();
     }
 
     #endregion
-
 }
