@@ -19,8 +19,8 @@ public class PlanetClickAction : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(1))
         {
-            TravelLanes[] lanes = GetComponentsInChildren<TravelLanes>();
-            pfm.MoveFleetOnMap(lanes[0]);
+            Planet planet = GetComponent<Planet>();
+            pfm.MoveFleetOnMap(planet);
         }
     }
 }

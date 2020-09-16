@@ -264,24 +264,28 @@ public class PlanetFleetMenu : MonoBehaviour
 
     #region Moving Fleets
 
-    public void MoveFleetOnMap(TravelLanes target)
+    public void MoveFleetOnMap(Planet target)
     {
-        curr_planet.GetInventory().RemoveItems(fleets_to_move);
-
-        for (int i = 0; i < fleet_pool.Count; i++)
+        if (fleets_selected != null)
         {
-            if (!fleet_pool[i].gameObject.activeSelf)
+            curr_planet.GetInventory().RemoveItems(fleets_to_move);
+
+            for (int i = 0; i < fleet_pool.Count; i++)
             {
-                fleet_pool[i].gameObject.SetActive(true);
-                fleet_pool[i].Activate(fleets_to_move, target, curr_planet);
-                break;
-            }
-            else
-            {
-                //add a new fleet object
+                if (!fleet_pool[i].gameObject.activeSelf)
+                {
+                    fleet_pool[i].gameObject.SetActive(true);
+                    fleet_pool[i].Activate(fleets_to_move, target, curr_planet);
+                    break;
+                }
+                else
+                {
+                    //add a new fleet object
+                }
             }
         }
         Refresh();
+        fleets_selected.Clear();
     }
 
     #endregion
