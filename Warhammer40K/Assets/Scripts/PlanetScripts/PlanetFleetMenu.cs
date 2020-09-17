@@ -110,7 +110,6 @@ public class PlanetFleetMenu : MonoBehaviour
         CURR_STATE = STATE.ACTIVE;
         gameObject.SetActive(true);
         curr_planet = inv;
-        //curr_planet.GetComponentInChildren<TravelLanes>().SetLineMaterial(1);
 
         fleets = curr_planet.GetInventory().GetItems();
         curr_planet_name.text = curr_planet.GetName();
@@ -129,7 +128,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     private void SetText()
     {
-        if (curr_planet.GetInventory().GetItems().Count < curr_planet.GetMaxFleetCount())
+        if (curr_planet.GetInventory().GetItems().Count < curr_planet.GetMaxSupply())
         {
             //planet_fleet_count_text.color = reset_color;
         }
@@ -138,7 +137,7 @@ public class PlanetFleetMenu : MonoBehaviour
             //planet_fleet_count_text.color = fleet_count_text_color;
         }
 
-        planet_fleet_count_text.text = "Ship Capacity: " + curr_planet.GetInventory().GetItems().Count + "/ " + curr_planet.GetMaxFleetCount();
+        planet_fleet_count_text.text = "Ship Capacity: " + curr_planet.GetInventory().GetItems().Count + "/ " + curr_planet.GetMaxSupply();
 
         //TODO:
         //supply text
@@ -217,8 +216,8 @@ public class PlanetFleetMenu : MonoBehaviour
                 }
                 break;
         }
-        fleet_selector.SetFleets(local_fleets);
         fleets_to_move = local_fleets;
+        fleet_selector.SetFleets(fleets_to_move);
     }
 
     public void ClearFleetsSelected(SELECTION_TYPE TYPE)
@@ -266,7 +265,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     public void MoveFleetOnMap(Planet target)
     {
-        if (fleets_selected != null)
+        if (fleets_selected.Count > 0)
         {
             curr_planet.GetInventory().RemoveItems(fleets_to_move);
 
@@ -284,8 +283,9 @@ public class PlanetFleetMenu : MonoBehaviour
                 }
             }
         }
-        Refresh();
         fleets_selected.Clear();
+        fleets_to_move.Clear();
+        Refresh();
     }
 
     #endregion

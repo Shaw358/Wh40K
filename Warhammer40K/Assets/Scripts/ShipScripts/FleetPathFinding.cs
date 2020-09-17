@@ -10,33 +10,33 @@ public class FleetPathFinding
         Planet curr_planet = first_planet;
         Planet lowest_distance_planet = null;
         float lowest_distance_value = 10000000;
+        float reset_value = 10000000;
 
-        foreach (Planet acc_planets in first_planet.GetTravelLanes().GetAccessiblePlanets())
+        if (first_planet.GetTravelLanes().GetAccessiblePlanets().Contains(target_planet))
         {
-            if (acc_planets == target_planet.GetComponentInParent<Planet>())
+            List<Planet> planets = first_planet.GetTravelLanes().GetAccessiblePlanets();
+            int goal = first_planet.GetTravelLanes().GetAccessiblePlanets().IndexOf(target_planet);
+            Planet planet = planets[goal];
+            path.Add(planet.gameObject);
+        }
+        else
+        {
+            foreach (Planet acc_planets in first_planet.GetTravelLanes().GetAccessiblePlanets())
             {
-                path.Add(acc_planets.gameObject);
-                break;
-            }
-            else
-            {
-                float distance = Vector3.Distance(acc_planets.transform.position, curr_planet.gameObject.transform.position);
+                float distance = Vector3.Distance(acc_planets.transform.position, target_planet.gameObject.transform.position);
                 if (distance < lowest_distance_value)
                 {
-                    curr_planet = acc_planets.GetComponentInChildren<Planet>();
+                    curr_planet = acc_planets;
 
                     lowest_distance_planet = acc_planets;
                     lowest_distance_value = distance;
                 }
             }
-        }
-
-        if (lowest_distance_planet != null)
-        {
             path.Add(lowest_distance_planet.gameObject);
         }
 
         int crash_preventer = 0;
+        lowest_distance_value = reset_value;
 
         while (true)
         {
@@ -48,37 +48,37 @@ public class FleetPathFinding
 
             if (curr_planet.GetTravelLanes().GetAccessiblePlanets().Count > 1)
             {
-                if (curr_planet.GetTravelLanes().GetAccessiblePlanets().Contains(target_planet.GetComponentInParent<Planet>()))
+                if (curr_planet.GetTravelLanes().GetAccessiblePlanets().Contains(target_planet))
                 {
-                    foreach (Planet acc_planets in curr_planet.GetTravelLanes().GetAccessiblePlanets())
-                    {
-                        if (acc_planets == target_planet)
-                        {
-                            path.Add(acc_planets.gameObject);
-                        }
-                    }
-                    break;
+                    List<Planet> planets = curr_planet.GetTravelLanes().GetAccessiblePlanets();
+                    int goal = curr_planet.GetTravelLanes().GetAccessiblePlanets().IndexOf(target_planet);
+                    Planet planet = planets[goal];
+                    path.Add(planet.gameObject);
                 }
                 else
                 {
-                    Debug.Log("");
                     foreach (Planet acc_planets in curr_planet.GetTravelLanes().GetAccessiblePlanets())
                     {
-                        float distance = Vector3.Distance(acc_planets.transform.position, curr_planet.gameObject.transform.position);
+                        float distance = Vector3.Distance(acc_planets.transform.position, target_planet.gameObject.transform.position);
                         if (distance < lowest_distance_value)
                         {
-                            curr_planet = acc_planets.GetComponent<Planet>();
+                            curr_planet = acc_planets;
 
                             lowest_distance_planet = acc_planets;
                             lowest_distance_value = distance;
                         }
                     }
+                    lowest_distance_value = reset_value;
                     path.Add(lowest_distance_planet.gameObject);
                 }
             }
             if (crash_preventer == 200)
             {
-                Debug.Log("Pathfinding Failed!");
+                foreach(GameObject planet in path)
+                {
+                    Debug.Log(planet.name);
+                }
+                Debug.LogWarning("Pathfinding Failed!");
                 throw new System.Exception("Our navigator could not find a path! The fleet is lost!\nWe have tried plotting a course over 200 star systems... yet we have failed.\nMay the Emperor protect us all!");
             }
         }

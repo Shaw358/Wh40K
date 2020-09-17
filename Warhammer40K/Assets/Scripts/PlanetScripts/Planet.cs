@@ -7,7 +7,7 @@ public class Planet : MonoBehaviour
     /// <summary>
     /// Overall class to keep track of basic stats that belong on every planet
     /// </summary>
-    protected int max_fleet_count;
+    protected int max_supply;
     private Inventory<Fleet> fleets = new Inventory<Fleet>();
 
     [SerializeField] protected string planet_name;
@@ -17,7 +17,7 @@ public class Planet : MonoBehaviour
 
     private void Awake()
     {
-        max_fleet_count = 10;
+        max_supply = 10;
         travel_lanes = GetComponentInChildren<TravelLanes>();
 
         #region deubbing
@@ -85,9 +85,9 @@ public class Planet : MonoBehaviour
         return planet_name;
     }
 
-    public int GetMaxFleetCount()
+    public int GetMaxSupply()
     {
-        return max_fleet_count;
+        return max_supply;
     }
 
     public Inventory<Fleet> GetInventory()

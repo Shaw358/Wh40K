@@ -11,7 +11,7 @@ public class TravelLanes : MonoBehaviour
     private List<Planet> accessible_planets = new List<Planet>();
 
     List<GameObject> connected_planets = new List<GameObject>();
-    [SerializeField] private Material[] line_materials;
+    [SerializeField] private Material[] line_materials = null;
 
     //gets planets within range, checks if they are already connected with them, if not they will spawn a lane otherwise it is ingored
     public void Setup()
@@ -84,4 +84,8 @@ public class TravelLanes : MonoBehaviour
             line.material = line_materials[index];
         }
     }
+    /*private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, 10);
+    }*/
 }

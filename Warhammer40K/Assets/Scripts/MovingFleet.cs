@@ -11,7 +11,6 @@ public class MovingFleet : MonoBehaviour
     private float distance_threshold = 0.5f;
 
     private int current_planet_index = 0;
-    private int minimum_connection_lanes = 1;
 
     private Vector3 pool_position;
 
