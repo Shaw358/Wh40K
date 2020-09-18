@@ -33,6 +33,7 @@ public class MovingFleet : MonoBehaviour
 
     public void Activate(List<Fleet> fleets, Planet target, Planet spawn_planet)
     {
+        /*fleet_pool[i].*/gameObject.SetActive(true);
         FleetPathFinding pathfind = new FleetPathFinding();
         target_planet = target;
         transform.position = spawn_planet.transform.position;
@@ -46,6 +47,7 @@ public class MovingFleet : MonoBehaviour
         //print(path.Count);
         if (state == STATES.ACTIVE)
         {
+            Debug.Log("move");
             transform.LookAt(path[current_planet_index].gameObject.transform);
             transform.position += transform.forward * Time.deltaTime * fleet_speed;
             if (Vector3.Distance(path[current_planet_index].transform.position, gameObject.transform.position) < distance_threshold)

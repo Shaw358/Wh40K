@@ -84,8 +84,4 @@ public class TravelLanes : MonoBehaviour
             line.material = line_materials[index];
         }
     }
-    /*private void OnDrawGizmos()
-    {
-        Gizmos.DrawWireSphere(transform.position, 10);
-    }*/
 }

@@ -8,7 +8,7 @@ public class PlanetClickAction : MonoBehaviour
         
     private void Awake()
     {
-        pfm = GameObject.FindGameObjectWithTag("planet_fleet_menu").GetComponentInChildren<PlanetFleetMenu>();
+        pfm = GameObject.Find("planet_menu_container").GetComponent<PlanetFleetMenu>();
     }
 
     private void OnMouseOver()

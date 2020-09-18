@@ -7,6 +7,7 @@ public class FleetPathFinding
     public List<GameObject> FindPath(Planet first_planet, Planet target_planet)
     {
         List<GameObject> path = new List<GameObject>();
+        Planet previous_planet = null;
         Planet curr_planet = first_planet;
         Planet lowest_distance_planet = null;
         float lowest_distance_value = 10000000;
@@ -32,6 +33,7 @@ public class FleetPathFinding
                     lowest_distance_value = distance;
                 }
             }
+            previous_planet = first_planet;
             path.Add(lowest_distance_planet.gameObject);
         }
 
@@ -57,10 +59,12 @@ public class FleetPathFinding
                 }
                 else
                 {
+                    Planet temp_curr_planet = curr_planet;
+                    //previous_planet = curr_planet;
                     foreach (Planet acc_planets in curr_planet.GetTravelLanes().GetAccessiblePlanets())
                     {
                         float distance = Vector3.Distance(acc_planets.transform.position, target_planet.gameObject.transform.position);
-                        if (distance < lowest_distance_value)
+                        if (distance < lowest_distance_value && previous_planet != acc_planets)
                         {
                             curr_planet = acc_planets;
 
@@ -68,16 +72,17 @@ public class FleetPathFinding
                             lowest_distance_value = distance;
                         }
                     }
+                    previous_planet = temp_curr_planet;
                     lowest_distance_value = reset_value;
                     path.Add(lowest_distance_planet.gameObject);
                 }
             }
             if (crash_preventer == 200)
             {
-                foreach(GameObject planet in path)
+                /*foreach(GameObject planet in path)
                 {
                     Debug.Log(planet.name);
-                }
+                }*/
                 Debug.LogWarning("Pathfinding Failed!");
                 throw new System.Exception("Our navigator could not find a path! The fleet is lost!\nWe have tried plotting a course over 200 star systems... yet we have failed.\nMay the Emperor protect us all!");
             }
