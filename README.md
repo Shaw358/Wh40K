@@ -1,11 +1,11 @@
 # Wh40K
 (De sprint opdracht word deel van een groter project!)
 
-##Sprint 1:
+## Sprint 1:
 
-##Inventory system
+## Inventory system
 
-#features:
+# features:
 
 Met cntrl/shift kun je meerdere items selecteren. Shift: pakt alle items tussen de eerste en tweede klik. Cntrl: pakt alle items die je uit de lijs selecteert.
 Druk met de rechter muisknop om de vloten te bewegen van planeet naar planeet.
