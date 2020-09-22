@@ -24,10 +24,9 @@ public class PlanetFleetMenu : MonoBehaviour
 
     protected TextMeshProUGUI planet_fleet_count_text;
 
+    private List<GameObject> fleet_cards = new List<GameObject>();
     private List<Fleet> fleets = new List<Fleet>();
     private List<int> fleets_selected = new List<int>();
-    private List<GameObject> fleet_cards = new List<GameObject>();
-
     private List<Fleet> fleets_to_move = new List<Fleet>();
 
     int fleet_amount;
@@ -228,11 +227,6 @@ public class PlanetFleetMenu : MonoBehaviour
         }
     }
 
-    public STATE GetState()
-    {
-        return CURR_STATE;
-    }
-
     private void ActivateFleetCards()
     {
         for (int i = 0; i < fleet_cards.Count - 1; i++)
@@ -243,6 +237,10 @@ public class PlanetFleetMenu : MonoBehaviour
         {
             fleet_cards[i].SetActive(true);
         }
+    }
+    public STATE GetState()
+    {
+        return CURR_STATE;
     }
 
     #endregion
