@@ -24,7 +24,7 @@ public class FleetPathFinding
         {
             foreach (Planet acc_planets in first_planet.GetTravelLanes().GetAccessiblePlanets())
             {
-                float distance = Vector3.Distance(acc_planets.transform.position, target_planet.gameObject.transform.position);
+                float distance = (target_planet.transform.position - acc_planets.transform.position).sqrMagnitude; 
                 if (distance < lowest_distance_value)
                 {
                     curr_planet = acc_planets;
@@ -63,7 +63,7 @@ public class FleetPathFinding
                     //previous_planet = curr_planet;
                     foreach (Planet acc_planets in curr_planet.GetTravelLanes().GetAccessiblePlanets())
                     {
-                        float distance = Vector3.Distance(acc_planets.transform.position, target_planet.gameObject.transform.position);
+                        float distance = (target_planet.transform.position - acc_planets.transform.position).sqrMagnitude;
                         if (distance < lowest_distance_value && previous_planet != acc_planets)
                         {
                             curr_planet = acc_planets;
@@ -79,10 +79,6 @@ public class FleetPathFinding
             }
             if (crash_preventer == 200)
             {
-                /*foreach(GameObject planet in path)
-                {
-                    Debug.Log(planet.name);
-                }*/
                 Debug.LogWarning("Pathfinding Failed!");
                 throw new System.Exception("Our navigator could not find a path! The fleet is lost!\nWe have tried plotting a course over 200 star systems... yet we have failed.\nMay the Emperor protect us all!");
             }
