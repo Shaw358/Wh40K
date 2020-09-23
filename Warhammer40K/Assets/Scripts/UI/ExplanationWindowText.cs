@@ -18,8 +18,18 @@ public class ExplanationWindowText : MonoBehaviour
         info_text.text = new_text;
     }
     
-    public void ClearText()
+    public void ResetText()
     {
         info_text.text = string.Empty;
+    }
+
+    public bool IsTextOverflowing()
+    {
+        return info_text.isTextOverflowing;
+    }
+
+    public void SetMargin(int margin)
+    {
+        info_text.margin -= new Vector4(0, margin, 0, margin);
     }
 }
