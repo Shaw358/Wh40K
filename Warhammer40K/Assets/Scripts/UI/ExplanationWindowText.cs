@@ -1,35 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
-using UnityEngine.UI;
 
 public class ExplanationWindowText : MonoBehaviour
 {
-    TextMeshProUGUI info_text;
+    TextMeshProUGUI txt_mesh;
 
     private void Awake()
     {
-        info_text = GetComponentInChildren<TextMeshProUGUI>();    
+        txt_mesh = GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void SetText(string new_text)
     {
-        info_text.text = new_text;
-    }
-    
-    public void ResetText()
-    {
-        info_text.text = string.Empty;
-    }
-
-    public bool IsTextOverflowing()
-    {
-        return info_text.isTextOverflowing;
-    }
-
-    public void SetMargin(int margin)
-    {
-        info_text.margin -= new Vector4(0, margin, 0, margin);
+        txt_mesh.text = new_text;
     }
 }
