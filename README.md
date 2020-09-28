@@ -1,15 +1,10 @@
 # Wh40K
-(De sprint opdracht word deel van een groter project!)
 
-## Sprint 1:
+A project started by me with support from artists, friends, teachers and streamers.</br>
+This game is inspired by the Paradox Interactive Strategy games like EU4, HoI4 and Stellaris.</br>
+</br>
+The [Trello](https://trello.com/b/7ys0oSK0/segmentum-obscurus) also has the GGD.</br>
+This is purely a pashion project that only has loose gameplay elements that still need to put together into something cohesive.</br>
+Development began early to mid 2020 and is the best representation of my current programming skills.
 
-## Inventory system
-
-# features:
-
-Met cntrl/shift kun je meerdere items selecteren. Shift: pakt alle items tussen de eerste en tweede klik. Cntrl: pakt alle items die je uit de lijs selecteert.
-Druk met de rechter muisknop om de vloten te bewegen van planeet naar planeet.
-Daarvoor heb ik een pathfinder gemaakt.
-De eerste twee knoppen sorteren de lijst van fregat naar speciaal en van speciaal naar fregat.
-
-Alles staat in de main branch
+[Video to some features thusfar made](https://youtu.be/OA1o1XV9wvg)
