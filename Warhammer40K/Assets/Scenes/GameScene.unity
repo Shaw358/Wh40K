@@ -4380,7 +4380,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positive_buff: {r: 0, g: 0, b: 0, a: 0}
   negative_buff: {r: 0, g: 0, b: 0, a: 0}
-  info_text: WWWWWWWWWWWWWWWWWWw
+  info_text: Some words may have colors int teh future
 --- !u!1001 &151470428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17314,7 +17314,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positive_buff: {r: 0, g: 0, b: 0, a: 0}
   negative_buff: {r: 0, g: 0, b: 0, a: 0}
-  info_text: WWWWWWWWWWWWWWWWWWw
+  info_text: This box will show you information when required
 --- !u!1 &636035081
 GameObject:
   m_ObjectHideFlags: 0
@@ -20024,7 +20024,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positive_buff: {r: 0, g: 0, b: 0, a: 0}
   negative_buff: {r: 0, g: 0, b: 0, a: 0}
-  info_text: WWWWWWWWWWWWWWWWWWw
+  info_text: To show this text I use different scripts as by the single responsibility
+    rule.
 --- !u!1 &754464118
 GameObject:
   m_ObjectHideFlags: 0
@@ -23344,6 +23345,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 860191321}
+  - component: {fileID: 860191323}
+  - component: {fileID: 860191322}
   m_Layer: 5
   m_Name: internal_branches
   m_TagString: Untagged
@@ -23371,6 +23374,30 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &860191322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860191320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13cac3c58bf90ba47b043ce7dc2101dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &860191323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 860191320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 777db0fb94ead2e4d828bcbb94d865d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &864082601
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27585,7 +27612,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   text_mesh: {fileID: 1362751291}
   rect: {fileID: 1010873943}
-  growth_margin_image: 10
 --- !u!1001 &1011212054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30546,6 +30572,7 @@ GameObject:
   - component: {fileID: 1130040862}
   - component: {fileID: 1130040861}
   - component: {fileID: 1130040860}
+  - component: {fileID: 1130040863}
   m_Layer: 5
   m_Name: empire_menu
   m_TagString: Untagged
@@ -30560,18 +30587,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130040858}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 686829339}
   - {fileID: 1824203492}
-  m_Father: {fileID: 1600961954}
-  m_RootOrder: 4
+  m_Father: {fileID: 1668442501}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 278}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1125.47, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1130040860
@@ -30623,6 +30650,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1130040858}
   m_CullTransparentMesh: 0
+--- !u!114 &1130040863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1130040858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf74e51380b1bb14bb9c7d9410e051bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1148677212
 GameObject:
   m_ObjectHideFlags: 0
@@ -31152,7 +31191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positive_buff: {r: 0, g: 0, b: 0, a: 0}
   negative_buff: {r: 0, g: 0, b: 0, a: 0}
-  info_text: WWWWWWWWWWWWWWWWWWw
+  info_text: The textbox height is added and removed dynamically
 --- !u!1001 &1169551359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41520,6 +41559,41 @@ MonoBehaviour:
   line_materials:
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
   - {fileID: 2100000, guid: 691606a4c47eddf46b25969f1f59e7b0, type: 2}
+--- !u!1 &1517117248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1517117249}
+  m_Layer: 5
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1517117249
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517117248}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1824203492}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1517668585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43216,10 +43290,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positive_buff: {r: 0, g: 0, b: 0, a: 0}
   negative_buff: {r: 0, g: 0, b: 0, a: 0}
-  info_text: 'WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW
-    WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW
-    WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW WWWW
-    WWWW WWWW '
+  info_text: Information box 1, this box will be one of many that'll show the branches
+    that will infight for power an you will have to maintain. Balance is key within
+    the empire, anything else and debuffs might occur.
 --- !u!1 &1599193515
 GameObject:
   m_ObjectHideFlags: 0
@@ -43443,7 +43516,7 @@ RectTransform:
   - {fileID: 575510669}
   - {fileID: 1517868326}
   - {fileID: 1050596070}
-  - {fileID: 1130040859}
+  - {fileID: 1668442501}
   - {fileID: 1010873943}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -45336,6 +45409,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 899c2a1b32937d842b9dade096735c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1668442500
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1668442501}
+  m_Layer: 5
+  m_Name: window
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1668442501
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1668442500}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1130040859}
+  m_Father: {fileID: 1600961954}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 278}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1689567174
 GameObject:
   m_ObjectHideFlags: 0
@@ -48057,6 +48166,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 16.3621, z: 1}
   m_Children:
   - {fileID: 860191321}
+  - {fileID: 1517117249}
   m_Father: {fileID: 1130040859}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
