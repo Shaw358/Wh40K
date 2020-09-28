@@ -2,6 +2,7 @@
 
 A project started by me with support from artists, friends, teachers and streamers.</br>
 This game is inspired by the Paradox Interactive Strategy games like EU4, HoI4 and Stellaris.</br>
+The game is being developed in Unity.</br>
 </br>
 [Link directly to the scripts](https://github.com/Shaw358/Wh40K/tree/master/Warhammer40K/Assets/Scripts)
 </br>
