@@ -21,7 +21,7 @@ public class ExplanationWindow : MonoBehaviour
         image = GetComponent<Image>();
         txt_manager = GetComponent<TextResizeManager>();
         expl_win_text = GetComponent<ExplanationWindowText>();
-        position_correction = new Vector2(60,0);
+        position_correction = new Vector2(60, 0);
     }
 
     private void Update()
@@ -44,7 +44,7 @@ public class ExplanationWindow : MonoBehaviour
                     is_active = true;
                     image.enabled = true;
                 }
-                if(previous_obj != obj.gameObject)
+                if (previous_obj != obj.gameObject)
                 {
                     expl_win_text.SetText(obj.GetInfoText());
                     txt_manager.Resize();
@@ -53,7 +53,7 @@ public class ExplanationWindow : MonoBehaviour
                 }
             }
         }
-        else if(is_active)
+        else if (is_active)
         {
             is_active = false;
             expl_win_text.SetText(string.Empty);
