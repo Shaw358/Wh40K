@@ -4,21 +4,24 @@ using UnityEngine;
 
 public class BranchManager : MonoBehaviour
 {
-    Branch[] branches;
+    Branch[] branches = new Branch[5];
 
     public enum ACTION
     {
         NONE,
         ADD_POWER,
         REMOVE_POWER,
-        PURGE
+        PURGE,
+        EMERGENCY_POWER,
+
     }
 
     private void Awake()
     {
         for(int i = 0; i < 5; i++)
         {
-            branches[i] = new Branch();
+            Branch temp = new Branch();
+            branches[i] = temp;
         }
     }
 

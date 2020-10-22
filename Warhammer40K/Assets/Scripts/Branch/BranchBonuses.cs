@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class BranchBonuses : ScriptableObject
 {
-    public enum TYPES
+    public enum BONUS_TYPES
     {
         NONE,
         DAMAGE,
@@ -19,8 +19,9 @@ public class BranchBonuses : ScriptableObject
 
     public enum BRANCHES
     {
-
+        ADEPTUS_ASTARTES,
     }
 
-    Dictionary<>
+    Dictionary<BONUS_TYPES, int> branch_stats = new Dictionary<BONUS_TYPES, int>();
+
 }
