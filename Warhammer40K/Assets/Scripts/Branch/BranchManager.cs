@@ -4,41 +4,49 @@ using UnityEngine;
 
 public class BranchManager : MonoBehaviour
 {
-    Branch[] branches = new Branch[5];
+    private Branch[] branches = new Branch[6];
 
+    public enum POWER_LEVEL
+    {
+        some_power = 5,
+        sizeable_power = 10,
+        substantial_power = 15
+    }
+    
     public enum ACTION
     {
         NONE,
-        ADD_POWER,
-        REMOVE_POWER,
-        PURGE,
-        EMERGENCY_POWER,
-
+        PARADE, //add power
+        EMERGENCY_POWER, //increases substantial amount of power
+        RAID, //remove some power
+        PURGE, //remove sizeable power
+        EXTERMINATE, //remove a lot of power + 20% chance of rebellion
+        SABOTAGE // prevent branch from getting events what increases their power for some time
     }
 
     private void Awake()
     {
-        for(int i = 0; i < 5; i++)
-        {
-            Branch temp = new Branch();
-            branches[i] = temp;
-        }
+        //branches[0] = new AdministratumBranch();
+        //branches[1] = new NavyBranch();
+        //branches[2] = new ArmyBranch();
+        //branches[3] = new MechanicusBranch();
+        //branches[4] = new EcclesiarchyBranch();
+        //branches[5] = new AssassinorumBranch();
     }
 
-    public void BranchAction(int branch, ACTION action, int value)
+    public void BranchAction(int branch, ACTION action, POWER_LEVEL power_level)
     {
-        switch(action)
+        if (action == ACTION.PARADE || action == ACTION.EMERGENCY_POWER)
         {
-            case ACTION.ADD_POWER:
-                branches[branch].AddPower(value);
-                break;
 
-            case ACTION.REMOVE_POWER:
-                branches[branch].RemovePower(value);
-                break;
+        }
+        else if (action == ACTION.RAID || action == ACTION.PURGE || action == ACTION.EXTERMINATE)
+        {
 
-            case ACTION.PURGE:
-                break;
+        }
+        else if (action == ACTION.SABOTAGE)
+        {
+
         }
     }
 }

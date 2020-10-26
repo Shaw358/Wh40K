@@ -19,7 +19,7 @@ public class BranchBonuses : ScriptableObject
 
     public enum BRANCHES
     {
-        ADEPTUS_ASTARTES,
+
     }
 
     Dictionary<BONUS_TYPES, int> branch_stats = new Dictionary<BONUS_TYPES, int>();
