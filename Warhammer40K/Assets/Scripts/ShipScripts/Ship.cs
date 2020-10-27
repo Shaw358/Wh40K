@@ -5,10 +5,6 @@ using ShipEnums;
 
 public class Ship : ScriptableObject
 {
-    /// <summary>
-    /// This class keeps track of a ship, it is supposed to be in a fleet from which it can move
-    /// </summary>
-    
     //basic stats
     protected float supply;
     protected float card_scale;

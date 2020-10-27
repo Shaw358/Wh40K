@@ -75,8 +75,6 @@ public class TravelLanes : MonoBehaviour
         line_renderer.Add(line_rend_to_add);
     }
 
-    #endregion
-
     public void SetLineMaterial(int index)
     {
         foreach (LineRenderer line in line_renderer)
@@ -84,4 +82,6 @@ public class TravelLanes : MonoBehaviour
             line.material = line_materials[index];
         }
     }
+
+    #endregion
 }

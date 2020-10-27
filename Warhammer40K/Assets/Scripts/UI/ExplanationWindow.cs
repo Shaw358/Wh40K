@@ -15,7 +15,6 @@ public class ExplanationWindow : MonoBehaviour
     GameObject previous_obj;
     private bool is_active;
 
-
     private void Awake()
     {
         image = GetComponent<Image>();

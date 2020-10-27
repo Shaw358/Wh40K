@@ -4,7 +4,7 @@ public class Subscriber
 {
     public int days;
 
-    public bool Trigger()
+    public bool EventTrigger()
     {
         if (days > 0)
         {

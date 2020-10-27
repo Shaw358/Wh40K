@@ -7,9 +7,6 @@ using ShipEnums;
 
 public class Card : MonoBehaviour
 {
-    /// <summary>
-    /// This class is for the buttons located on the right of screen where individual ships are displayed
-    /// </summary>
     private Material card_material;
     private Image background_image;
     private Image ship_image;

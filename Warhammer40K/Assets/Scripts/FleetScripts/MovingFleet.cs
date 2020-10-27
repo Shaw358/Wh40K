@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovingFleet : MonoBehaviour
 {
+    GameSpeed gamespd;
     private List<Fleet> fleets_to_transfer = new List<Fleet>();
     private List<GameObject> path = new List<GameObject>();
     private Planet target_planet;
@@ -27,6 +28,7 @@ public class MovingFleet : MonoBehaviour
 
     private void Awake()
     {
+        gamespd = GetComponent<GameSpeed>();
         pool_position = GetComponentInParent<Transform>().position;
         gameObject.SetActive(false);
     }
@@ -44,6 +46,7 @@ public class MovingFleet : MonoBehaviour
 
     private void Update()
     {
+        fleet_speed = gamespd.GetGameSpeed();
         //print(path.Count);
         if (state == STATES.ACTIVE)
         {

@@ -23,12 +23,12 @@ public class InventoryUiMovement : MonoBehaviour
     {
         if (is_active == true)
         {
-            rect_trans.anchoredPosition = open_state;
+            rect_trans.anchoredPosition = collapsed_state;
             is_active = false;
         }
         else
         {
-            rect_trans.anchoredPosition = collapsed_state;
+            rect_trans.anchoredPosition = open_state;
             is_active = true;
         }
     }

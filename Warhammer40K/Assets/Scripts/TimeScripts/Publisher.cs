@@ -7,12 +7,12 @@ public class Publisher : ScriptableObject
 
     public void AddSubscriber(Event new_sub)
     {
-        del += new_sub.Trigger;
+        del += new_sub.EventTrigger;
     }
 
     public void RemoveSubscriber(Event sub)
     {
-        del -= sub.Trigger;
+        del -= sub.EventTrigger;
     }
 
     public void Publish()
