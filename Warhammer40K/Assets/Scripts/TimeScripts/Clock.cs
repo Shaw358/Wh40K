@@ -4,7 +4,7 @@ using System;
 
 public class Clock : MonoBehaviour
 {
-    [SerializeField] private Publisher pub;
+    [SerializeField] private Publisher event_pub;
     [SerializeField] private ClockUI clock_ui;
 
     [SerializeField] private float speed_level = 1;
@@ -18,7 +18,7 @@ public class Clock : MonoBehaviour
     private void Awake()
     {
         GetComponent<ClockUI>();
-        pub = new Publisher();
+        event_pub = new Publisher();
     }
 
     public void Pause()
@@ -56,14 +56,12 @@ public class Clock : MonoBehaviour
     {
         if (!pause)
         {
-            Debug.Log("step 1");
             timer += Time.deltaTime;
             if (timer > 2 / speed_level)
             {
-                Debug.Log("step 2");
                 timer -= 2 / speed_level;
 
-                pub.Publish();
+                event_pub.Publish();
                 UpdateDateTime(1);
             }
         }

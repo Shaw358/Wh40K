@@ -1,19 +1,6 @@
 ﻿using UnityEngine;
 
-public class Subscriber
+public abstract class Subscriber : ScriptableObject
 {
-    public int days;
-
-    public bool EventTrigger()
-    {
-        if (days > 0)
-        {
-            days--;
-            return false;
-        }
-        else
-        {
-            return true;
-        }
-    }
+    public abstract bool Trigger();
 }

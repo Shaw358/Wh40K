@@ -9,6 +9,4 @@ public class ClockUI : MonoBehaviour
     {
         tmpro.text = display_date;
     }
-
-
 }

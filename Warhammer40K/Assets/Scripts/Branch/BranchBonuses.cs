@@ -1,7 +1,6 @@
 ﻿using UnityEngine;
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using BranchEnums;
 
 public class BranchBonuses : ScriptableObject
 {
@@ -17,11 +16,25 @@ public class BranchBonuses : ScriptableObject
         SUPPLY_CONSUMPTION
     }
 
-    public enum BRANCHES
-    {
-
-    }
+    BRANCHES branch;
 
     Dictionary<BONUS_TYPES, int> branch_stats = new Dictionary<BONUS_TYPES, int>();
 
+    public void Constructor(BRANCHES temp_branch, List<int> stats)
+    {
+        branch = temp_branch;
+
+        branch_stats.Add(BONUS_TYPES.DAMAGE, stats[0]);
+        branch_stats.Add(BONUS_TYPES.PRODUCTION, stats[1]);
+        branch_stats.Add(BONUS_TYPES.RESOURCE_COST, stats[2]);
+        branch_stats.Add(BONUS_TYPES.LEADER_COST, stats[3]);
+        branch_stats.Add(BONUS_TYPES.UPKEEP, stats[4]);
+        branch_stats.Add(BONUS_TYPES.SPEED, stats[5]);
+        branch_stats.Add(BONUS_TYPES.SUPPLY_CONSUMPTION, stats[6]);
+    }
+
+    public Dictionary<BONUS_TYPES, int> GetBranchBonus()
+    {
+        return branch_stats;
+    }
 }
