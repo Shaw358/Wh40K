@@ -26,12 +26,11 @@ public class BranchManager : MonoBehaviour
 
     private void Awake()
     {
-        //branches[0] = new AdministratumBranch();
-        //branches[1] = new NavyBranch();
-        //branches[2] = new ArmyBranch();
-        //branches[3] = new MechanicusBranch();
-        //branches[4] = new EcclesiarchyBranch();
-        //branches[5] = new AssassinorumBranch();
+        branches[0] = new AdministratumBranch();
+        branches[1] = new NavyBranch();
+        branches[2] = new ArmyBranch();
+        branches[3] = new MechanicusBranch();
+        branches[4] = new EcclesiarchyBranch();
     }
 
     public void BranchAction(int branch, ACTION action, POWER_LEVEL power_level)
@@ -40,11 +39,15 @@ public class BranchManager : MonoBehaviour
         {
 
         }
-        else if (action == ACTION.RAID || action == ACTION.PURGE || action == ACTION.EXTERMINATE)
+        else if (action == ACTION.RAID || action == ACTION.PURGE)
         {
 
         }
         else if (action == ACTION.SABOTAGE)
+        {
+
+        }
+        else if(action == ACTION.EXTERMINATE)
         {
 
         }

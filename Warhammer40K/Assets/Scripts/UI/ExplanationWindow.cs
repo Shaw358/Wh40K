@@ -21,6 +21,8 @@ public class ExplanationWindow : MonoBehaviour
         txt_manager = GetComponent<TextResizeManager>();
         expl_win_text = GetComponent<ExplanationWindowText>();
         position_correction = new Vector2(60, 0);
+        expl_win_text.SetText(string.Empty);
+        image.enabled = false;
     }
 
     private void Update()

@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Publisher : ScriptableObject
+public class Publisher
 {
     private delegate bool Delegate();
     Delegate del;

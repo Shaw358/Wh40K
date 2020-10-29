@@ -9,7 +9,7 @@ public class InventoryUiMovement : MonoBehaviour
     private bool is_active;
 
     public Vector2 collapsed_state = new Vector2(1017, 392f);
-    public Vector2 open_state = new Vector2(672, 392);
+    public Vector2 open_state = new Vector2(670, 352);
     
     private void Awake()
     {
@@ -23,12 +23,12 @@ public class InventoryUiMovement : MonoBehaviour
     {
         if (is_active == true)
         {
-            rect_trans.anchoredPosition = collapsed_state;
+            rect_trans.anchoredPosition = open_state;
             is_active = false;
         }
         else
         {
-            rect_trans.anchoredPosition = open_state;
+            rect_trans.anchoredPosition = collapsed_state;
             is_active = true;
         }
     }

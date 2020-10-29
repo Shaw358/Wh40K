@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using BranchEnums;
 
-public class BranchBonuses : ScriptableObject
+public class BranchBonuses
 {
     public enum BONUS_TYPES
     {

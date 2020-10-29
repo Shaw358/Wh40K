@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class AdministratumBranch : Branch
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void SpecialisedBranchActionEffect()
     {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

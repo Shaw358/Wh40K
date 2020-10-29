@@ -1,4 +1,6 @@
-﻿public class Branch : BranchAction
+﻿using UnityEngine;
+
+public abstract class Branch 
 {
     int power = 20;
     BranchBonuses branch_bonusus = new BranchBonuses();
@@ -7,9 +9,5 @@
     {
         return power;
     }
-
-    public override void SpecialisedBranchActionEffect()
-    {
-
-    }
+    public abstract void SpecialisedBranchActionEffect();
 }

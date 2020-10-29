@@ -4,5 +4,4 @@ using UnityEngine;
 
 public abstract class BranchAction : ScriptableObject
 {
-    public abstract void SpecialisedBranchActionEffect();
 }
