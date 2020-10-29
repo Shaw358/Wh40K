@@ -11,7 +11,13 @@
         }
         else
         {
+            DeleteEvent();
             return true;
         }
+    }
+
+    public void DeleteEvent()
+    {
+
     }
 }

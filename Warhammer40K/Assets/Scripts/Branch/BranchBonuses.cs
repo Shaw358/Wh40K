@@ -33,8 +33,13 @@ public class BranchBonuses : ScriptableObject
         branch_stats.Add(BONUS_TYPES.SUPPLY_CONSUMPTION, stats[6]);
     }
 
-    public Dictionary<BONUS_TYPES, int> GetBranchBonus()
+    public int GetBranchBonus(BONUS_TYPES type)
     {
-        return branch_stats;
+        return branch_stats[type];
+    }
+
+    public void SetBranchPower(BONUS_TYPES type, int value)
+    {
+        branch_stats[type] = value;
     }
 }

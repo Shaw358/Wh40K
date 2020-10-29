@@ -46,7 +46,7 @@ public class MovingFleet : MonoBehaviour
 
     private void Update()
     {
-        fleet_speed = gamespd.GetGameSpeed();
+        fleet_speed = 10;
         //print(path.Count);
         if (state == STATES.ACTIVE)
         {

@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class DebugStuffs : MonoBehaviour
 {
-    [SerializeField] GameObject pog;
-    public void yeet()
+    private void Start()
     {
-        pog.SetActive(true);
+        transform.LookAt(transform.position);
+        //transform.rotation = new Vector3(transform.eulerAngles.x, 1, 1);
     }
-
 }
