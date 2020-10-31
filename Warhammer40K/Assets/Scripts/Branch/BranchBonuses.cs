@@ -1,5 +1,4 @@
-﻿using UnityEngine;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using BranchEnums;
 
 public class BranchBonuses
@@ -18,7 +17,7 @@ public class BranchBonuses
 
     BRANCHES branch;
 
-    Dictionary<BONUS_TYPES, int> branch_stats = new Dictionary<BONUS_TYPES, int>();
+    Dictionary<BONUS_TYPES, float> branch_stats = new Dictionary<BONUS_TYPES, float>();
 
     public void Constructor(BRANCHES temp_branch, List<int> stats)
     {
@@ -33,7 +32,7 @@ public class BranchBonuses
         branch_stats.Add(BONUS_TYPES.SUPPLY_CONSUMPTION, stats[6]);
     }
 
-    public int GetBranchBonus(BONUS_TYPES type)
+    public float GetBranchBonus(BONUS_TYPES type)
     {
         return branch_stats[type];
     }

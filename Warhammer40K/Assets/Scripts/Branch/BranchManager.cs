@@ -5,12 +5,13 @@ using UnityEngine;
 public class BranchManager : MonoBehaviour
 {
     private Branch[] branches = new Branch[6];
+    [SerializeField] private EventManager event_manager;
 
     public enum POWER_LEVEL
     {
         some_power = 5,
         sizeable_power = 10,
-        substantial_power = 15
+        substantial_power = 25
     }
     
     public enum ACTION
@@ -37,7 +38,7 @@ public class BranchManager : MonoBehaviour
     {
         if (action == ACTION.PARADE || action == ACTION.EMERGENCY_POWER)
         {
-
+            
         }
         else if (action == ACTION.RAID || action == ACTION.PURGE)
         {

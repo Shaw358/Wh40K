@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DebugStuffs : MonoBehaviour
+public class DebugStuffs : DebugStuffChild
 {
-    private void Start()
+    private void Update()
     {
-        transform.LookAt(transform.position);
-        //transform.rotation = new Vector3(transform.eulerAngles.x, 1, 1);
+        kek++;
     }
 }

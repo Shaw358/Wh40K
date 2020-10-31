@@ -3,15 +3,23 @@ using UnityEngine;
 
 public class EventManager : MonoBehaviour
 {
+    [SerializeField] private GameObject b_event;
+    [SerializeField] private GameObject b_event_parent;
+
     [SerializeField] private Publisher pub;
-    private List<Event> active_events = new List<Event>();
+    private List<GameObject> active_events = new List<GameObject>();
 
-    public void GenerateNewEvent(int event_length, int event_strength)
+    public void GenerateNewBranchEvent(int event_length, int event_strength, Branch temp_branch)
     {
-        Event ev = new Event();
-        ev.Constructor();
-        pub.AddSubscriber(ev);
+        GameObject new_event = Instantiate(b_event);
+        BranchEvent temp_b_ev = new_event.AddComponent<BranchEvent>();
+        EventSubscriber temp_sub_ev = new_event.AddComponent<EventSubscriber>();
 
-        active_events.Add(ev);
+        //temp_b_ev.Constructor(temp_branch, );
+        //temp_sub_ev.Constructor();
+
+        new_event.transform.parent = b_event_parent.transform;
+
+        active_events.Add(new_event);
     }
 }

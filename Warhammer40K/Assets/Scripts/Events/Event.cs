@@ -1,15 +1,6 @@
-﻿public class Event : EventSubscriber
+﻿using UnityEngine;
+
+public class Event : MonoBehaviour 
 {
     protected string event_name;
-    protected BranchBonuses branch_bonuses;
-
-    public void Constructor()
-    {
-        
-    }
-
-    public void asdjsjkdfn()
-    {
-
-    }
 }

@@ -5,12 +5,12 @@ public class Publisher
     private delegate bool Delegate();
     Delegate del;
 
-    public void AddSubscriber(Event new_sub)
+    public void AddSubscriber(Subscriber new_sub)
     {
         del += new_sub.Trigger;
     }
 
-    public void RemoveSubscriber(Event sub)
+    public void RemoveSubscriber(Subscriber sub)
     {
         del -= sub.Trigger;
     }
