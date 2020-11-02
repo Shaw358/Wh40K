@@ -3,22 +3,22 @@ public class EventSubscriber : Subscriber
 {
     BranchEvent b_event;
     private int event_length;
-    private int days_left;
 
-    public void Constructor(int temp_event_length, int temp_days_left, BranchEvent temp_b_event)
+    public void Constructor(BranchEvent temp_b_event, int temp_event_length)
     {
-        b_event = temp_b_event;
         event_length = temp_event_length;
-        days_left = temp_days_left;
+        b_event = temp_b_event;
     }
 
     protected int days;
+
     public override bool Trigger()
     {
-        if (days > 0)
+        Debug.Log("Y'all telling me this bull, Gameobject: " + gameObject.GetInstanceID());
+        if (days < event_length)
         {
-            days--;
-            
+            days++;
+            b_event.Execute();
             return false;
         }
         else
@@ -27,13 +27,8 @@ public class EventSubscriber : Subscriber
         }
     }
 
-    public int EventLength()
+    public int GetEventLength()
     {
         return event_length;
-    }
-
-    public int DaysLeft()
-    {
-        return days_left;
     }
 }

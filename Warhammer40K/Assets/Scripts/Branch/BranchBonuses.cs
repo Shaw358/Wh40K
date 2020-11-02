@@ -19,7 +19,7 @@ public class BranchBonuses
 
     Dictionary<BONUS_TYPES, float> branch_stats = new Dictionary<BONUS_TYPES, float>();
 
-    public void Constructor(BRANCHES temp_branch, List<int> stats)
+    public void Constructor(List<int> stats, BRANCHES temp_branch = BRANCHES.NONE)
     {
         branch = temp_branch;
 

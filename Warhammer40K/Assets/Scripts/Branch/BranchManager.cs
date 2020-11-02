@@ -5,7 +5,6 @@ using UnityEngine;
 public class BranchManager : MonoBehaviour
 {
     private Branch[] branches = new Branch[6];
-    [SerializeField] private EventManager event_manager;
 
     public enum POWER_LEVEL
     {
@@ -14,7 +13,7 @@ public class BranchManager : MonoBehaviour
         substantial_power = 25
     }
     
-    public enum ACTION
+    /*public enum ACTION
     {
         NONE,
         PARADE, //add power
@@ -23,7 +22,7 @@ public class BranchManager : MonoBehaviour
         PURGE, //remove sizeable power
         EXTERMINATE, //remove a lot of power + 20% chance of rebellion
         SABOTAGE // prevent branch from getting events what increases their power for some time
-    }
+    }*/
 
     private void Awake()
     {
@@ -34,23 +33,8 @@ public class BranchManager : MonoBehaviour
         branches[4] = new EcclesiarchyBranch();
     }
 
-    public void BranchAction(int branch, ACTION action, POWER_LEVEL power_level)
+    public Branch GetBranch(int branch)
     {
-        if (action == ACTION.PARADE || action == ACTION.EMERGENCY_POWER)
-        {
-            
-        }
-        else if (action == ACTION.RAID || action == ACTION.PURGE)
-        {
-
-        }
-        else if (action == ACTION.SABOTAGE)
-        {
-
-        }
-        else if(action == ACTION.EXTERMINATE)
-        {
-
-        }
+        return branches[branch];
     }
 }

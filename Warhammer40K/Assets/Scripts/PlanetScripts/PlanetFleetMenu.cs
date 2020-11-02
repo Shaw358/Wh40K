@@ -144,6 +144,7 @@ public class PlanetFleetMenu : MonoBehaviour
 
     public void CardTransferFleetSelector(SELECTION_TYPE FLEET_SELECTION_TYPE, int s_index /*sibling index*/)
     {
+        //This code looks worse than the eastern front in 1943
         List<Fleet> local_fleets = new List<Fleet>();
         ui_move.Enable(true);
 

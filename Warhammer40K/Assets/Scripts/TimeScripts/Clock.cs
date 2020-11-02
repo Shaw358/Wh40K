@@ -18,7 +18,6 @@ public class Clock : MonoBehaviour
     private void Awake()
     {
         GetComponent<ClockUI>();
-        event_pub = new Publisher();
     }
 
     public void Pause()

@@ -2,11 +2,11 @@
 {
     public enum BRANCHES
     {
+        ADMINISTRATUM,
         NAVY,
         ARMY,
-        ASSASSINORUM,
-        ADMINISTRATUM,
+        MECHANICUS,
         ECCLESIARCHY,
-        MECHANICUS
+        NONE
     }
 }

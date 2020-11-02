@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Publisher
+public class Publisher : MonoBehaviour
 {
     private delegate bool Delegate();
     Delegate del;
@@ -17,6 +17,7 @@ public class Publisher
 
     public void Publish()
     {
+        Debug.Log(gameObject.GetInstanceID() + " publisher");
         if (del != null)
         {
             del.Invoke();
