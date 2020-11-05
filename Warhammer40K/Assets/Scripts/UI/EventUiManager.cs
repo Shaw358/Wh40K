@@ -2,17 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EventUiManager : MonoBehaviour
+public class EventUiManager : DaySubscriber
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    List<Event> active_evs = new List<Event>();
 
-    // Update is called once per frame
-    void Update()
+    public override bool Trigger()
     {
-        
+        return false;
     }
 }

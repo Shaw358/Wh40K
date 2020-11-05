@@ -9,7 +9,7 @@ public class PlanetFleetMenu : MonoBehaviour
     /// Displays fleets on the menu when clicking on a planet
     /// </summary>
     FleetSelector fleet_selector;
-    InventoryUiMovement ui_move;
+    OpenCloseUi ui_move;
     SpawnFleet spawn_fleet;
 
     private int max_cards = 20;
@@ -54,7 +54,7 @@ public class PlanetFleetMenu : MonoBehaviour
         spawn_fleet = GameObject.Find("planet_collection").GetComponent<SpawnFleet>();
         spawn_fleet.Setup(moving_fleet_prefab);
         ContentSizeFitter all_ship_cards;
-        ui_move = GameObject.Find("right_menu_container").GetComponent<InventoryUiMovement>();
+        ui_move = GameObject.Find("right_menu_container").GetComponent<OpenCloseUi>();
         fleet_selector = new FleetSelector();
         fleet_selector.Setup();
 

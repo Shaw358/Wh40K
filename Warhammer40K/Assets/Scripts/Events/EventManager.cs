@@ -25,6 +25,7 @@ public class EventManager : MonoBehaviour
 
     public void GenerateNewBranchEvent(int event_length, BRANCHES branch, List<int> bonuses, string event_name)
     {
+        Debug.Log("You lost the bloody war");
         BranchBonuses bonus = new BranchBonuses();
 
         bonus.Constructor(bonuses);
@@ -38,6 +39,6 @@ public class EventManager : MonoBehaviour
         temp_sub_ev.Constructor(temp_b_ev, event_length);
 
         active_events.Add(new_event);
-        pub.AddSubscriber(temp_sub_ev);
+        pub.AddDaySubscriber(temp_sub_ev);
     }
 }

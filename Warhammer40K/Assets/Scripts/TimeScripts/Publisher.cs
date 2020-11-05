@@ -2,32 +2,41 @@
 
 public class Publisher : MonoBehaviour
 {
-    private delegate bool Delegate();
-    Delegate del;
+    private delegate bool DelegateDay();
+    DelegateDay day_countdown_del;
+    private delegate void DelegateTick();
+    DelegateTick normal_tick_del;
 
+    public void AddDaySubscriber(DaySubscriber new_sub)
+    {
+        day_countdown_del += new_sub.Trigger;
+    }
     public void AddSubscriber(Subscriber new_sub)
     {
-        del += new_sub.Trigger;
+        normal_tick_del += new_sub.Trigger;
     }
 
-    public void RemoveSubscriber(Subscriber sub)
+    public void RemoveDaySubscriber(DaySubscriber sub)
     {
-        del -= sub.Trigger;
+        day_countdown_del -= sub.Trigger;
     }
 
     public void Publish()
     {
-        Debug.Log(gameObject.GetInstanceID() + " publisher");
-        if (del != null)
+        if(normal_tick_del != null)
         {
-            del.Invoke();
-            foreach (Delegate individual in del.GetInvocationList())
+            normal_tick_del.Invoke();
+        }
+
+        if (day_countdown_del != null)
+        {
+            day_countdown_del.Invoke();
+            foreach (DelegateDay individual in day_countdown_del.GetInvocationList())
             {
                 bool result = individual();
-                Debug.Log(result);
                 if (result)
                 {
-                    del -= individual;
+                    day_countdown_del -= individual;
                 }
             }
         }

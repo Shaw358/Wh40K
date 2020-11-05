@@ -1,5 +1,11 @@
-﻿using UnityEngine;
-public abstract class Subscriber : MonoBehaviour
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Subscriber : MonoBehaviour
 {
-    public abstract bool Trigger();
+    public void Trigger()
+    {
+
+    }
 }

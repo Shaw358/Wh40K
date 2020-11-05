@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-public class EventSubscriber : Subscriber
+public class EventSubscriber : DaySubscriber
 {
     BranchEvent b_event;
     private int event_length;
@@ -14,7 +14,6 @@ public class EventSubscriber : Subscriber
 
     public override bool Trigger()
     {
-        Debug.Log("Y'all telling me this bull, Gameobject: " + gameObject.GetInstanceID());
         if (days < event_length)
         {
             days++;

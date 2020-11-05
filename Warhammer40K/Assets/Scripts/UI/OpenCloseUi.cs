@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryUiMovement : MonoBehaviour
+public class OpenCloseUi : MonoBehaviour
 {
     private RectTransform rect_trans;
 
     private bool is_active;
 
-    public Vector2 collapsed_state = new Vector2(1017, 392f);
-    public Vector2 open_state = new Vector2(670, 352);
+    [SerializeField] private Vector2 collapsed_state = new Vector2(1017, 392f);
+    [SerializeField] private Vector2 open_state = new Vector2(670, 352);
     
     private void Awake()
     {
@@ -19,7 +19,7 @@ public class InventoryUiMovement : MonoBehaviour
 
     //TODO:
     //animate it
-    public void Move()
+    private void Move()
     {
         if (is_active == true)
         {
