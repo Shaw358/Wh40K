@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Subscriber : MonoBehaviour
+public abstract class Subscriber : MonoBehaviour
 {
-    public void Trigger()
-    {
-
-    }
+    public abstract void Trigger();
 }

@@ -11,6 +11,7 @@ public class Publisher : MonoBehaviour
     {
         day_countdown_del += new_sub.Trigger;
     }
+
     public void AddSubscriber(Subscriber new_sub)
     {
         normal_tick_del += new_sub.Trigger;

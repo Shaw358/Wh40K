@@ -10,7 +10,9 @@ public class EventManager : MonoBehaviour
 
     [SerializeField] private Publisher pub;
     private List<GameObject> active_events = new List<GameObject>();
-    [SerializeField] private Image[] branch_event_images = new Image[10];
+    [SerializeField] private Sprite[] branch_event_images = new Sprite[10];
+
+    [SerializeField] EventUiManager ev_ui_manager;
 
     private void Start()
     {
@@ -20,12 +22,14 @@ public class EventManager : MonoBehaviour
         {
             tempe.Add(i);
         }
-        GenerateNewBranchEvent(365, BRANCHES.NAVY, tempe, "EXTERMINATUS");
+        for (int i = 0; i < 7; i++)
+        {
+            GenerateNewBranchEvent(365, BRANCHES.NAVY, tempe, "EXTERMINATUS");
+        }
     }
 
     public void GenerateNewBranchEvent(int event_length, BRANCHES branch, List<int> bonuses, string event_name)
     {
-        Debug.Log("You lost the bloody war");
         BranchBonuses bonus = new BranchBonuses();
 
         bonus.Constructor(bonuses);
@@ -35,10 +39,11 @@ public class EventManager : MonoBehaviour
         BranchEvent temp_b_ev = new_event.AddComponent<BranchEvent>();
         EventSubscriber temp_sub_ev = new_event.AddComponent<EventSubscriber>();
 
-        temp_b_ev.Constructor(br_manager.GetBranch((int)branch), event_name, bonus);
+        temp_b_ev.Constructor(br_manager.GetBranch((int)branch), event_name, branch_event_images[0], bonus);
         temp_sub_ev.Constructor(temp_b_ev, event_length);
 
         active_events.Add(new_event);
         pub.AddDaySubscriber(temp_sub_ev);
+        ev_ui_manager.AddEvent(new_event);
     }
 }
