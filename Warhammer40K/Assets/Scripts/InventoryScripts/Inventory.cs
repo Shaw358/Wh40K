@@ -5,6 +5,11 @@ public class Inventory<T>
 {
     List<T> item_list = new List<T>();
 
+    public T GetItem(int index)
+    {
+        return item_list[index];
+    }
+
     public List<T> GetItems()
     {
         return item_list;
