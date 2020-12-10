@@ -15,6 +15,8 @@ public class Clock : MonoBehaviour
     string display_date;
     int time_correction;
 
+    Ship ship;
+
     private void Awake()
     {
         GetComponent<ClockUI>();

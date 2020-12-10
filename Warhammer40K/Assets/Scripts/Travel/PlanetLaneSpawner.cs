@@ -10,6 +10,7 @@ public class PlanetLaneSpawner : MonoBehaviour
     private void Start()
     {
         StartCoroutine(Spawn());
+        gameObject.GetComponent<PlanetCollection>().GetAllPlanets();
     }
 
     //Spawns the lines with a slight delay in order to allow each TravelLanes to update onto which planets it has already connected

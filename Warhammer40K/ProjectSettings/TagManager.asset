@@ -8,6 +8,7 @@ TagManager:
   - pfm_cards_container
   - planet_fleet_menu
   - ship_container
+  - planet
   layers:
   - Default
   - TransparentFX

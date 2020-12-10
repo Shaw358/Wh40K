@@ -5,9 +5,11 @@ using UnityEngine;
 public class PlanetClickAction : MonoBehaviour
 {
     private PlanetFleetMenu pfm;
-        
+    Planet planet;
+
     private void Awake()
     {
+        planet = gameObject.GetComponent<Planet>();
         pfm = GameObject.Find("planet_menu_container").GetComponent<PlanetFleetMenu>();
     }
 
@@ -15,12 +17,17 @@ public class PlanetClickAction : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            pfm.Activate(gameObject.GetComponent<Planet>());
+            if (planet.GetFaction() == Factions.FACTION.PLAYER)
+            {
+                pfm.Activate(planet);
+            }
         }
         if (Input.GetMouseButtonDown(1))
         {
-            Planet planet = GetComponent<Planet>();
-            pfm.MoveFleetOnMap(planet);
+            if (planet.GetFaction() == Factions.FACTION.PLAYER)
+            {
+                pfm.MoveFleetOnMap(planet);
+            }
         }
     }
 }

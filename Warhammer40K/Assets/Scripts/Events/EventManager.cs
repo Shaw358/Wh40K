@@ -24,11 +24,16 @@ public class EventManager : MonoBehaviour
         }
         for (int i = 0; i < 7; i++)
         {
-            GenerateNewBranchEvent(365, BRANCHES.NAVY, tempe, "EXTERMINATUS");
+            GenerateNewBranchEvent(365, tempe, "EXTERMINATUS");
         }
     }
 
-    public void GenerateNewBranchEvent(int event_length, BRANCHES branch, List<int> bonuses, string event_name)
+    public BranchManager GetBranchManager()
+    {
+        return br_manager;
+    }
+
+    public void GenerateNewBranchEvent(int event_length, List<int> bonuses, string event_name)
     {
         BranchBonuses bonus = new BranchBonuses();
 
@@ -39,7 +44,7 @@ public class EventManager : MonoBehaviour
         BranchEvent temp_b_ev = new_event.AddComponent<BranchEvent>();
         EventSubscriber temp_sub_ev = new_event.AddComponent<EventSubscriber>();
 
-        temp_b_ev.Constructor(br_manager.GetBranch((int)branch), event_name, branch_event_images[0], bonus);
+        temp_b_ev.Constructor(br_manager.GetCurrentBranch(), event_name, branch_event_images[0], bonus);
         temp_sub_ev.Constructor(temp_b_ev, event_length);
 
         active_events.Add(new_event);

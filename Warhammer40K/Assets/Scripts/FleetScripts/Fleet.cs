@@ -1,8 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class Fleet : ScriptableObject
+public interface IFleetStats
 {
+    int GetSupplyConsumption();
+}
+
+public class Fleet : IFleetStats
+{
+    public int GetSupplyConsumption()
+    {
+        int amount_to_return = 0;
+
+        foreach (Ship ship in ships.GetItems())
+        {
+            amount_to_return += ship.GetSupplyConsumption();
+        }
+        return amount_to_return;
+    }
+
     //private List<Ship> ships = new List<Ship>();
     private Inventory<Ship> ships = new Inventory<Ship>();
     private int supply_consumption;
@@ -24,14 +40,5 @@ public class Fleet : ScriptableObject
         ships.AddItem(ship_to_add); 
     }
 
-    public int GetFleetSupplyConsumption()
-    {
-        int amount_to_return = 0;
-
-        foreach(Ship ship in ships.GetItems())
-        {
-            amount_to_return += ship.GetSupplyConsumption();
-        }
-        return amount_to_return;
-    }
+    
 }

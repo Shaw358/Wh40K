@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class BranchManager : MonoBehaviour
 {
-    private Branch[] branches = new Branch[6];
+    private Branch[] branches = new Branch[5];
+    private Branch curr_branch;
 
     public enum POWER_LEVEL
     {
@@ -33,8 +34,13 @@ public class BranchManager : MonoBehaviour
         branches[4] = new EcclesiarchyBranch();
     }
 
-    public Branch GetBranch(int branch)
+    public void SetCurrentBranch(int index)
     {
-        return branches[branch];
+        curr_branch = branches[index];
+    }
+
+    public Branch GetCurrentBranch()
+    {
+        return curr_branch;
     }
 }

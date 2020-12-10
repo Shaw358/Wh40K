@@ -10,6 +10,5 @@ public class Event : MonoBehaviour
     private void Awake()
     {
         ev_image = GetComponent<Image>();
-        Debug.Log(ev_image);
     }
 }

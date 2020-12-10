@@ -237,6 +237,8 @@ public class PlanetFleetMenu : MonoBehaviour
         for (int i = 0; i < fleets.Count; i++)
         {
             fleet_cards[i].SetActive(true);
+            Debug.Log(fleet_cards[i].transform.GetChild(0).GetChild(0).GetChild(0).name);
+            fleet_cards[i].transform.GetChild(0).GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = "Fleet " + i;
         }
     }
     public STATE GetState()

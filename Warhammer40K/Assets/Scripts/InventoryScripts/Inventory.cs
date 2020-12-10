@@ -25,6 +25,11 @@ public class Inventory<T>
         item_list.AddRange(items);
     }
 
+    public void RemoveItem(T item)
+    {
+        item_list.Remove(item);
+    }
+
     public void RemoveItems(List<T> to_remove)
     {
         for (int i = 0; i < to_remove.Count; i++)

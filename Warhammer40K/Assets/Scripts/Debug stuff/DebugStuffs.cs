@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿/*using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity;
 
-public class DebugStuffs : DebugStuffChild
+public static class DebugStuffs
 {
-    private void Update()
+    public static bool IsFalse(this bool item)
     {
-        kek++;
+        return !item;
     }
 }
+*/

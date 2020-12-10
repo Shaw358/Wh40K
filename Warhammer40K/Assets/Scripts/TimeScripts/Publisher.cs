@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Planets;
 
 public class Publisher : MonoBehaviour
 {
@@ -6,6 +7,11 @@ public class Publisher : MonoBehaviour
     DelegateDay day_countdown_del;
     private delegate void DelegateTick();
     DelegateTick normal_tick_del;
+
+    private void Awake()
+    {
+        
+    }
 
     public void AddDaySubscriber(DaySubscriber new_sub)
     {
@@ -24,14 +30,10 @@ public class Publisher : MonoBehaviour
 
     public void Publish()
     {
-        if(normal_tick_del != null)
-        {
-            normal_tick_del.Invoke();
-        }
+        normal_tick_del?.Invoke();
 
         if (day_countdown_del != null)
         {
-            day_countdown_del.Invoke();
             foreach (DelegateDay individual in day_countdown_del.GetInvocationList())
             {
                 bool result = individual();
